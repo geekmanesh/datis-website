@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-23 16:49+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: datis/settings.py:110 datis/settings.py:111
+msgid "Datis Control Panel"
+msgstr "کنترل پنل داتیس"
+
+#: datis/settings.py:112
+msgid "DATIS ADMINSTRATOR"
+msgstr "مدیریت داتیس"
+
+#: projects/admin.py:23 users/admin.py:14
+msgid "Basic Information"
+msgstr "اطلاعات پایه"
+
+#: projects/admin.py:27
+msgid "Client & Financial"
+msgstr "مشتری و مالی"
+
+#: projects/admin.py:31 projects/models.py:43 users/admin.py:28
+msgid "Status"
+msgstr "وضعیت"
+
+#: projects/apps.py:7
+msgid "Portfolio"
+msgstr "نمونه کارها"
+
+#: projects/models.py:13
+msgid "Category name"
+msgstr "نام دسته بندی"
+
+#: projects/models.py:21 projects/models.py:54
+msgid "Category"
+msgstr "دسته بندی"
+
+#: projects/models.py:22
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: projects/models.py:28
+msgid "Done"
+msgstr "پایان یافته"
+
+#: projects/models.py:29
+msgid "In-progress"
+msgstr "در حال انجام"
+
+#: projects/models.py:35
+msgid "Project name"
+msgstr "نام پروژه"
+
+#: projects/models.py:37
+msgid "Description"
+msgstr "توضیحات"
+
+#: projects/models.py:46
+msgid "Client"
+msgstr "مشتری"
+
+#: projects/models.py:48
+msgid "Cost"
+msgstr "هزینه"
+
+#: projects/models.py:61 projects/models.py:70
+msgid "Project"
+msgstr "پروژه"
+
+#: projects/models.py:62
+msgid "Projects"
+msgstr "پروژه ها"
+
+#: projects/models.py:72 projects/models.py:79
+msgid "Image"
+msgstr "عکس"
+
+#: projects/models.py:80
+msgid "Project Images"
+msgstr "عکس های پروژه"
+
+#: users/admin.py:24
+msgid "Permissions"
+msgstr ""
+
+#: users/apps.py:7 users/models.py:23
+msgid "Users"
+msgstr "اعضا"
+
+#: users/models.py:8
+msgid "Email"
+msgstr "ایمیل"
+
+#: users/models.py:9
+msgid "Full Name"
+msgstr "نام کامل"
+
+#: users/models.py:10
+msgid "Active"
+msgstr "فعال"
+
+#: users/models.py:11
+msgid "Staff"
+msgstr "ادمین"
+
+#: users/models.py:22
+msgid "User"
+msgstr "عضو"
