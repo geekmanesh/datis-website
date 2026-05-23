@@ -2,6 +2,7 @@ from django.contrib import admin
 from unfold.admin import ModelAdmin
 from .models import Project, ProjectCategory, ProjectImage
 from .forms import ProjectForm
+from django.utils.translation import gettext_lazy as _
 
 
 class ProjectImageInline(admin.TabularInline):  # or StackedInline
@@ -14,20 +15,20 @@ class ProjectImageInline(admin.TabularInline):  # or StackedInline
 @admin.register(Project)
 class ProjectAdmin(ModelAdmin):
     form = ProjectForm
-    list_display = ["name", "category", "customer", "status"]
+    list_display = ["name", "category", "client", "status"]
     inlines = [ProjectImageInline]
     exclude = ["id"]
     fieldsets = (
         (
-            "Basic Information",
+            _("Basic Information"),
             {"fields": ("name", "description", "category")},
         ),
         (
-            "Client & Financial",
-            {"fields": ("customer", "cost")},
+            _("Client & Financial"),
+            {"fields": ("client", "cost")},
         ),
         (
-            "Status",
+            _("Status"),
             {"fields": ("status",)},
         ),
     )
@@ -35,4 +36,4 @@ class ProjectAdmin(ModelAdmin):
 
 @admin.register(ProjectCategory)
 class ProjectCategoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ["name"]
