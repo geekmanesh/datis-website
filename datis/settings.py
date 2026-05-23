@@ -1,5 +1,6 @@
 from pathlib import Path
 from environs import env
+from django.utils.translation import gettext_lazy as _
 
 env.read_env()
 
@@ -84,7 +85,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Tehran"
+
 
 USE_I18N = True
 
@@ -105,36 +107,36 @@ USE_TZ = True
 
 UNFOLD = {
     "SHOW_LANGUAGES": True,
-    "TITLE": "Datis Control Panel",
-    "SITE_HEADER": "Datis Control Panel",
-    "SITE_SUBTITLE": "DATIS ADMINSTRATOR",
-    "SIDEBAR": {
-        "show_all_applications": False,
-        "navigation": [
-            {
-                "title": "Main Navigation",
-                "separator": True,
-                "items": [
-                    {
-                        "title": "Dashboard",
-                        "icon": "dashboard",
-                        "link": "/admin/",
-                    },
-                ],
-            },
-            {
-                "title": "Website Links",
-                "items": [
-                    {
-                        "title": "View Site",
-                        "icon": "open_in_new",
-                        "link": "/",
-                        "external": True,
-                    },
-                ],
-            },
-        ],
-    },
+    "TITLE": _("Datis Control Panel"),
+    "SITE_HEADER": _("Datis Control Panel"),
+    "SITE_SUBTITLE": _("DATIS ADMINSTRATOR"),
+    # "SIDEBAR": {
+    #     "show_all_applications": True,
+    #     "navigation": [
+    #         {
+    #             "title": "Main Navigation",
+    #             "separator": True,
+    #             "items": [
+    #                 {
+    #                     "title": "Dashboard",
+    #                     "icon": "dashboard",
+    #                     "link": "/admin/",
+    #                 },
+    #             ],
+    #         },
+    #         {
+    #             "title": "Website Links",
+    #             "items": [
+    #                 {
+    #                     "title": "View Site",
+    #                     "icon": "open_in_new",
+    #                     "link": "/",
+    #                     "external": True,
+    #                 },
+    #             ],
+    #         },
+    #     ],
+    # },
 }
 STATIC_URL = "static/"
 
