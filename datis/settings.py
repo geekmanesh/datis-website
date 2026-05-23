@@ -12,17 +12,20 @@ DEBUG = env.bool("DEBUG", True)
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    "unfold",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "users.apps.UsersConfig",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -60,6 +63,8 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = "users.User"
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -81,8 +86,54 @@ TIME_ZONE = "UTC"
 
 USE_I18N = True
 
+USE_L10N = True
+
+LANGUAGES = [
+    ("en", "English"),
+    ("fa", "Persian"),
+]
+
+LANGUAGE_CODE = "en"
+
+LOCALE_PATHS = [
+    BASE_DIR / "locale/",
+]
+
 USE_TZ = True
 
+UNFOLD = {
+    "SHOW_LANGUAGES": True,
+    "TITLE": "Datis Control Panel",
+    "SITE_HEADER": "Datis Control Panel",
+    "SITE_SUBTITLE": "DATIS ADMINSTRATOR",
+    "SIDEBAR": {
+        "show_all_applications": False,
+        "navigation": [
+            {
+                "title": "Main Navigation",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Dashboard",
+                        "icon": "dashboard",
+                        "link": "/admin/",
+                    },
+                ],
+            },
+            {
+                "title": "Website Links",
+                "items": [
+                    {
+                        "title": "View Site",
+                        "icon": "open_in_new",
+                        "link": "/",
+                        "external": True,
+                    },
+                ],
+            },
+        ],
+    },
+}
 STATIC_URL = "static/"
 
 MEDIA_URL = "/media/"
