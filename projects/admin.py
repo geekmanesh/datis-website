@@ -3,6 +3,8 @@ from unfold.admin import ModelAdmin
 from .models import Project, ProjectCategory, ProjectImage
 from .forms import ProjectForm
 from django.utils.translation import gettext_lazy as _
+from django.db import models
+from unfold.contrib.forms.widgets import WysiwygWidget
 
 
 class ProjectImageInline(admin.TabularInline):  # or StackedInline
@@ -18,6 +20,9 @@ class ProjectAdmin(ModelAdmin):
     list_display = ["name", "category", "client", "status"]
     inlines = [ProjectImageInline]
     exclude = ["id"]
+    formfield_overrides = {
+        models.TextField: {"widget": WysiwygWidget},
+    }
     fieldsets = (
         (
             _("Basic Information"),

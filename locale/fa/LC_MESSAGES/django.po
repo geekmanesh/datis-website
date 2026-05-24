@@ -59,7 +59,7 @@ msgid "Done"
 msgstr "پایان یافته"
 
 #: projects/models.py:29
-msgid "In-progress"
+msgid "In Progress"
 msgstr "در حال انجام"
 
 #: projects/models.py:35
