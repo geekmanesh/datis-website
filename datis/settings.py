@@ -20,9 +20,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "solo",
     # Local
     "users.apps.UsersConfig",
     "projects.apps.ProjectsConfig",
+    "core.apps.CoreConfig",
+    "unfold.contrib.forms",
 ]
 
 MIDDLEWARE = [
@@ -107,9 +110,10 @@ USE_TZ = True
 
 UNFOLD = {
     "SHOW_LANGUAGES": True,
-    "TITLE": _("Datis Control Panel"),
+    "SITE_TITLE": _("Datis Control Panel"),
     "SITE_HEADER": _("Datis Control Panel"),
     "SITE_SUBTITLE": _("DATIS ADMINSTRATOR"),
+    "SITE_URL": "/",
     # "SIDEBAR": {
     #     "show_all_applications": True,
     #     "navigation": [
