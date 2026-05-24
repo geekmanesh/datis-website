@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "projects.apps.ProjectsConfig",
     "core.apps.CoreConfig",
+    "services.apps.ServicesConfig",
     "unfold.contrib.forms",
 ]
 
