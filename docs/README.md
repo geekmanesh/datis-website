@@ -63,7 +63,7 @@ docker-compose up --build
 
 The first run will build the Django image, set up the PostgreSQL database, and apply migrations automatically.
 
-### Usage
+### Usage <a id="usage"></a>
 
 Once the containers are running, open your browser and go to:
 
@@ -72,10 +72,10 @@ Once the containers are running, open your browser and go to:
 
 The admin interface can be switched between Farsi and English via Django’s language selector.
 
-## Show Your Support
+## Show Your Support <a id="show-your-support"></a>
 
 If you find this project interesting, please give it a star on GitHub.
 
-## License
+## License <a id="license"></a>
 
 This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
