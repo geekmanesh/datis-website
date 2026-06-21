@@ -45,7 +45,9 @@ ROOT_URLCONF = "datis.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / "templates",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -115,35 +117,38 @@ UNFOLD = {
     "SITE_HEADER": _("Datis Control Panel"),
     "SITE_SUBTITLE": _("DATIS ADMINSTRATOR"),
     "SITE_URL": "/",
-    # "SIDEBAR": {
-    #     "show_all_applications": True,
-    #     "navigation": [
-    #         {
-    #             "title": "Main Navigation",
-    #             "separator": True,
-    #             "items": [
-    #                 {
-    #                     "title": "Dashboard",
-    #                     "icon": "dashboard",
-    #                     "link": "/admin/",
-    #                 },
-    #             ],
-    #         },
-    #         {
-    #             "title": "Website Links",
-    #             "items": [
-    #                 {
-    #                     "title": "View Site",
-    #                     "icon": "open_in_new",
-    #                     "link": "/",
-    #                     "external": True,
-    #                 },
-    #             ],
-    #         },
-    #     ],
-    # },
+    "SIDEBAR": {
+        "show_all_applications": True,
+        "navigation": [
+            {
+                "title": "Main Navigation",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Dashboard",
+                        "icon": "dashboard",
+                        "link": "/admin/",
+                    },
+                ],
+            },
+            {
+                "title": "Website Links",
+                "items": [
+                    {
+                        "title": "View Site",
+                        "icon": "open_in_new",
+                        "link": "/",
+                        "external": True,
+                    },
+                ],
+            },
+        ],
+    },
 }
 STATIC_URL = "static/"
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
