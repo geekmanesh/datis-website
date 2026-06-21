@@ -1,10 +1,11 @@
 from django.contrib import admin
-from unfold.admin import ModelAdmin
-from .models import Project, ProjectCategory, ProjectImage
-from .forms import ProjectForm
-from django.utils.translation import gettext_lazy as _
 from django.db import models
+from django.utils.translation import gettext_lazy as _
+from unfold.admin import ModelAdmin
 from unfold.contrib.forms.widgets import WysiwygWidget
+
+from .forms import ProjectForm
+from .models import Project, ProjectCategory, ProjectImage
 
 
 class ProjectImageInline(admin.TabularInline):  # or StackedInline

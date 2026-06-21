@@ -1,6 +1,7 @@
 from pathlib import Path
-from environs import env
+
 from django.utils.translation import gettext_lazy as _
+from environs import env
 
 env.read_env()
 
@@ -85,7 +86,8 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+        "NAME": "django.contrib.auth.\
+            password_validation.NumericPasswordValidator",
     },
 ]
 

@@ -1,8 +1,9 @@
 from django.contrib import admin
-from unfold.admin import ModelAdmin
-from solo.admin import SingletonModelAdmin
-from .models import SiteConfig
 from django.utils.translation import gettext_lazy as _
+from solo.admin import SingletonModelAdmin
+from unfold.admin import ModelAdmin
+
+from .models import SiteConfig
 
 
 @admin.register(SiteConfig)
