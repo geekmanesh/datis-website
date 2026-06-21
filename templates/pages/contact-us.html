@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<section class="page-header bg-color-tertiary custom-page-header page-header-modern page-header-background page-header-background-sm parallax mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.2}" data-image-src="img/demos/construction-2/page-header.jpg">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 align-self-center">
+				<ul class="breadcrumb custom-breadcrumb d-block text-center text-4">
+					<li><a href="#">خانه</a></li>
+					<li class="active">تماس با ما</li>
+				</ul>
+			</div>
+			<div class="col-md-12 align-self-center p-static text-center mt-1">
+				<h1 class="font-weight-bold text-color-secondary text-11">تماس با ما</h1>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="container container-lg pt-4">
+	<div class="row">
+		<div class="col">
+			<p class="mb-1">در ارتباط باشید</p>
+			<h3 class="text-secondary font-weight-bold text-capitalize text-7 mb-3">یک پیام برای ما بفرستید</h3>
+		</div>
+	</div>
+	<div class="row pb-4">
+		<div class="col-lg-7 pb-5">
+
+			<p>
+				لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+			</p>
+
+			<form class="contact-form custom-form-style-1" action="php/contact-form.php" method="POST">
+				<div class="contact-form-success alert alert-success d-none mt-4">
+					<strong>موفقیت!</strong> پیام شما به ما ارسال شد.
+				</div>
+
+				<div class="contact-form-error alert alert-danger d-none mt-4">
+					<strong>خطا!</strong> خطایی در ارسال پیام شما پیش آمد.
+					<span class="mail-error-message text-1 d-block"></span>
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<input type="text" placeholder="نام شما" value="" data-msg-required="لطفا نام خود را وارد کنید." maxlength="100" class="form-control bg-color-tertiary" name="name" id="name" required>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<input type="email" placeholder="آدرس ایمیل" value="" data-msg-required="لطفا آدرس ایمیل خود را وارد کنید." data-msg-email="لطفا یک آدرس ایمیل معتبر وارد کنید." maxlength="100" class="form-control bg-color-tertiary text-left" name="email" id="email" dir="ltr" required>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<input type="text" placeholder="شماره تلفن" value="" data-msg-required="لطفا شماره تلفن خود را وارد کنید." maxlength="100" class="form-control bg-color-tertiary" name="phone" id="phone" required>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<input type="text" placeholder="موضوع" value="" data-msg-required="لطفا موضوع را وارد کنید." maxlength="100" class="form-control bg-color-tertiary" name="subject" id="subject" required>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<textarea maxlength="5000" placeholder="پیام" data-msg-required="لطفا پیام خود را وارد کنید." rows="5" class="form-control bg-color-tertiary" name="message" id="message" required></textarea>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col">
+						<input type="submit" value="ارسال پیام" class="btn btn-outline btn-primary rounded-0 py-3 px-5 font-weight-semibold" data-loading-text="در حال بارگذاری ...">
+					</div>
+				</div>
+			</form>
+
+		</div>
+		<div class="col-lg-5">
+			<div class="custom-card-style-2 card-contact-us mb-5">
+				<div class="m-4">
+					<div class="row flex-column px-5 pt-3 pb-4">
+						<div class="row px-3 mb-3">
+							<h3 class="text-secondary font-weight-bold text-capitalize my-3">اطلاعات تماس</h3>
+							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه</p>
+						</div>
+						<div class="row px-lg-3 align-items-center">
+							<div class="col-2 col-lg-1 px-1 text-center">
+								<i class="fas fa-map-marker-alt text-8 text-secondary align-middle"></i>
+							</div>
+							<div class="col-10 col-lg-11">
+								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">آدرس</h4>
+								<p class="mb-0">فلکه دانشگاه، برج بلور، طبقه 456</p>
+							</div>
+						</div>
+						<hr>
+						<div class="row px-lg-3 align-items-center">
+							<div class="col-2 col-lg-1 px-1 text-center">
+								<i class="fas fa-mobile-alt text-8 text-secondary align-middle"></i>
+							</div>
+							<div class="col-10 col-lg-11">
+								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">شماره تلفن</h4>
+								<p class="mb-0"><a href="#" class="text-color-default"><span class="ltr-text">(800) 123 4567</span></a></p>
+							</div>
+						</div>
+						<hr>
+						<div class="row px-lg-3 align-items-center">
+							<div class="col-2 col-lg-1 px-1 text-center">
+								<i class="far fa-envelope text-7 text-secondary align-middle"></i>
+							</div>
+							<div class="col-10 col-lg-11">
+								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">آدرس ایمیل</h4>
+								<p class="mb-0"><a class="px-0 text-default" href="mailto:mail@domain.com">porto@construction.com</a></p>
+							</div>
+						</div>
+						<hr>
+						<div class="row px-lg-3 align-items-center">
+							<div class="col-2 col-lg-1 px-1 text-center">
+								<i class="far fa-calendar-alt text-7 text-secondary align-middle"></i>
+							</div>
+							<div class="col-10 col-lg-11">
+								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">روزها/ساعات کاری</h4>
+								<p class="mb-1">شنبه - پنجشنبه / 9 صبح - 5 عصر</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

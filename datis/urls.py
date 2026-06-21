@@ -5,11 +5,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path("i18n/", include("django.conf.urls.i18n")),  # For the language switcher
+    path("", include("core.urls")),
+    path("services/", include("services.urls")),
+    path("projects/", include("projects.urls")),
+    path("i18n/", include("django.conf.urls.i18n")),
 ]
-
-urlpatterns += i18n_patterns(
-    path("admin/", admin.site.urls),
-)
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
