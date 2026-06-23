@@ -2,16 +2,18 @@ name: Django CI
 
 on:
   push:
-    branches: ["master"]
+    branches:
+      - main
+
   pull_request:
-    branches: ["master"]
+    branches:
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-
   quality:
     name: Code Quality
     runs-on: ubuntu-latest
@@ -20,56 +22,97 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
       - name: Set up uv
-      - uses: astral-sh/setup-uv@v6
-      - name: Install Code Qualification Tools
-      - run: uv sync
-      - name: Lint Code
-      - run: uv run ruff check .
-      - name: Check Formatting
-      - run: uv run ruff format . --check
+        uses: astral-sh/setup-uv@v6
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Ruff Lint
+        run: uv run ruff check .
+
+      - name: Ruff Format Check
+        run: uv run ruff format . --check
 
   test:
     name: Tests (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
+
     needs: quality
 
     strategy:
       fail-fast: false
+
       matrix:
-        python-version: ["3.12", "3.13", "3.14"]
+        python-version:
+          - "3.12"
+          - "3.13"
+          - "3.14"
+
+    services:
+      postgres:
+        image: postgres:17
+
+        env:
+          POSTGRES_DB: datisdb
+          POSTGRES_USER: datisdbuser
+          POSTGRES_PASSWORD: datispassword
+
+        ports:
+          - 5432:5432
+
+        options: >-
+          --health-cmd="pg_isready -U datisdbsuperuser -d datisdb"
+          --health-interval=10s
+          --health-timeout=3s
+          --health-retries=5
 
     env:
       DJANGO_SETTINGS_MODULE: datis.settings
-      SECRET_KEY: ci-secret-key-not-for-production
-      DEBUG: "True"
+
+      SECRET_KEY: ci-secret-key
+
+      DEBUG: "False"
+
+      DB_NAME: datisdb
+      DB_USER: datisdbuser
+      DB_PASSWORD: datispassword
+      DB_HOST: localhost
+      DB_PORT: 5432
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          cache: "pip"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: uv sync
 
-      - name: Run migrations
-        run: python manage.py migrate --no-input
+      - name: Check migrations
+        run: uv run python manage.py makemigrations --check --dry-run
 
-      - name: Check for missing migrations
-        run: python manage.py makemigrations --check --dry-run
+      - name: Apply migrations
+        run: uv run python manage.py migrate --no-input
 
-      - name: Run tests
-        run: python manage.py test --verbosity=2
+      - name: Run Django tests
+        run: uv run python manage.py test --verbosity=2
 
-      - name: Check Django deployment checklist
-        run: python manage.py check --deploy --fail-level WARNING
+      - name: Django system checks
+        run: uv run python manage.py check
+
+      - name: Django deployment checks
         env:
-          DEBUG: "False"
-          ALLOWED_HOSTS: "localhost"
+          ALLOWED_HOSTS: localhost
+        run: uv run python manage.py check --deploy --fail-level WARNING
