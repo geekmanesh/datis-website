@@ -25,7 +25,6 @@ class ProjectCategory(models.Model):
 
 
 class Project(models.Model):
-
     class StatusChoices(models.TextChoices):
         DONE = "done", _("Done")
         IN_PROGRESS = "in-progress", _("In Progress")
