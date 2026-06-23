@@ -171,9 +171,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Migrations
-*/migrations/[0-9]*.py
-*/migrations/__pycache__/
-
 # Media
 media/

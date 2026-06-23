@@ -1,7 +1,6 @@
 services:
   web:
     build: .
-    container_name: datis_web
     command: python manage.py runserver 0.0.0.0:8000
     environment:
       - DB_HOST=db
@@ -21,7 +20,6 @@ services:
   
   db:
     image: postgres:17
-    container_name: datis_db
     environment:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_USER=${DB_USER}
