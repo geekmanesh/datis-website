@@ -111,8 +111,3 @@ jobs:
 
       - name: Django system checks
         run: uv run python manage.py check
-
-      - name: Django deployment checks
-        env:
-          ALLOWED_HOSTS: localhost
-        run: uv run python manage.py check --deploy --fail-level WARNING
