@@ -1,11 +1,15 @@
-FROM python:3.12-slim
+FROM python:3.14-slim
 
 WORKDIR /app
 
-COPY requirements.txt /app
+RUN python -m pip install --no-cache-dir uv
 
-RUN pip install -r requirements.txt
+COPY pyproject.toml uv.lock ./
 
-COPY . /app
+RUN uv sync --frozen
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+COPY . .
+
+ENV PATH="/app/.venv/bin:$PATH"
+
+CMD ["uv", "run", "manage.py", "runserver", "0.0.0.0:8000"]
