@@ -36,7 +36,7 @@ class SiteConfigAdmin(ModelAdmin, SingletonModelAdmin):
             _("Social Media"),
             {
                 "fields": (
-                    "bale_url",
+                    "telegram_url",
                     "instagram_url",
                     "linkedin_url",
                 )
