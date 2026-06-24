@@ -1,4 +1,3 @@
-# core/models.py
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from solo.models import SingletonModel
@@ -22,7 +21,7 @@ class SiteConfig(SingletonModel):
         blank=True, max_length=500, verbose_name=_("Working hours")
     )
 
-    bale_url = models.URLField(blank=True, verbose_name=_("Bale"))
+    telegram_url = models.URLField(blank=True, verbose_name=_("Telegram"))
     instagram_url = models.URLField(blank=True, verbose_name=_("Instagram"))
     linkedin_url = models.URLField(blank=True, verbose_name=_("LinkedIn"))
 
