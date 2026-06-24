@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<section class="page-header bg-color-tertiary custom-page-header page-header-modern page-header-background page-header-background-sm parallax mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.2}" data-image-src="img/demos/construction-2/page-header.jpg">
+<section class="page-header bg-color-tertiary custom-page-header page-header-modern page-header-background page-header-background-sm parallax mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.2}" data-image-src="{% static 'img/demos/construction-2/page-header.jpg' %}">
     <div class="container">
         <div class="row">
             <div class="col-md-12 align-self-center">
@@ -90,18 +91,18 @@
     <div class="container container-lg">
         <div class="row row-gutter-sm my-4 py-2 lightbox" data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}, 'mainClass': 'mfp-with-zoom', 'zoom': {'enabled': true, 'duration': 300}}">
             <div class="col-md-4 pb-4 pb-md-0">
-                <a href="img/demos/construction-2/about-us/about-us-1.jpg" class="appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="100">
-                    <img src="img/demos/construction-2/about-us/about-us-1.jpg" class="img-fluid" alt="">
+                <a href="{% static 'img/demos/construction-2/about-us/about-us-1.jpg' %}" class="appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="100">
+                    <img src="{% static 'img/demos/construction-2/about-us/about-us-1.jpg' %}" class="img-fluid" alt="">
                 </a>
             </div>
             <div class="col-md-4 pb-4 pb-md-0">
-                <a href="img/demos/construction-2/about-us/about-us-2.jpg" class="appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="300">
-                    <img src="img/demos/construction-2/about-us/about-us-2.jpg" class="img-fluid" alt="">
+                <a href="{% static 'img/demos/construction-2/about-us/about-us-2.jpg' %}" class="appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="300">
+                    <img src="{% static 'img/demos/construction-2/about-us/about-us-2.jpg' %}" class="img-fluid" alt="">
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="img/demos/construction-2/about-us/about-us-3.jpg" class="appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="500">
-                    <img src="img/demos/construction-2/about-us/about-us-3.jpg" class="img-fluid" alt="">
+                <a href="{% static 'img/demos/construction-2/about-us/about-us-3.jpg' %}" class="appear-animation" data-appear-animation="fadeInDownShorter" data-appear-animation-delay="500">
+                    <img src="{% static 'img/demos/construction-2/about-us/about-us-3.jpg' %}" class="img-fluid" alt="">
                 </a>
             </div>
         </div>
@@ -147,161 +148,9 @@
     </div>
     <div class="row">
         <div class="col">
-            <hr class="my-5">
+            <hr class="my-4">
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <p class="mb-1">متخصصین ما</p>
-            <h3 class="text-secondary font-weight-bold text-capitalize text-7 mb-5">تیم ساخت و ساز</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 col-lg-3 text-center pb-4 pb-lg-0 px-md-5 d-flex flex-column align-items-center">
-            <span class="thumb-info custom-thumb-info thumb-info-hide-wrapper-bg mx-0 mb-2">
-                <a class="popup-with-zoom-anim text-decoration-none" title="Robert Doe">
-                    <img src="img/team/team-1.jpg" class="img-fluid" alt="">
-                </a>
-            </span>
-            <span>
-                <h4 class="text-color-secondary mb-0 mt-2 primary-font">جان اسنو</h4>
-                <p>معمار</p>
-            </span>
-        </div>
-        <div class="col-md-6 col-lg-3 text-center pb-4 pb-lg-0 px-md-5 d-flex flex-column align-items-center">
-            <span class="thumb-info custom-thumb-info thumb-info-hide-wrapper-bg mx-0 mb-2">
-                <a class="popup-with-zoom-anim text-decoration-none" title="Robert Doe">
-                    <img src="img/team/team-4.jpg" class="img-fluid" alt="">
-                </a>
-            </span>
-            <span>
-                <h4 class="text-color-secondary mb-0 mt-2 primary-font">جسیکا آلبا</h4>
-                <p>معمار</p>
-            </span>
-        </div>
-        <div class="col-md-6 col-lg-3 text-center pb-4 pb-md-0 px-md-5 d-flex flex-column align-items-center">
-            <span class="thumb-info custom-thumb-info thumb-info-hide-wrapper-bg mx-0 mb-2">
-                <a class="popup-with-zoom-anim text-decoration-none" title="Robert Doe">
-                    <img src="img/team/team-2.jpg" class="img-fluid" alt="">
-                </a>
-            </span>
-            <span>
-                <h4 class="text-color-secondary mb-0 mt-2 primary-font">استیو راجرز</h4>
-                <p>مهندس</p>
-            </span>
-        </div>
-        <div class="col-md-6 col-lg-3 text-center px-md-5 d-flex flex-column align-items-center">
-            <span class="thumb-info custom-thumb-info thumb-info-hide-wrapper-bg mx-0 mb-2">
-                <a class="popup-with-zoom-anim text-decoration-none" title="Robert Doe">
-                    <img src="img/team/team-5.jpg" class="img-fluid" alt="">
-                </a>
-            </span>
-            <span>
-                <h4 class="text-color-secondary mb-0 mt-2 primary-font">جان اسنو</h4>
-                <p>مهندس</p>
-            </span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <hr class="my-5">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p class="mb-1">آنچه می گویند</p>
-            <h3 class="text-secondary font-weight-bold text-capitalize text-7 mb-3">نقد و بررسی مشتریان</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col pb-5">
-            <div class="owl-carousel owl-theme custom-dots mt-3 mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 2}, '992': {'items': 2}, '1200': {'items': 2}}, 'margin': 18, 'loop': true, 'nav': false, 'dots': true}">
-                <div>
-                    <div class="testimonial testimonial-style-4 custom-testimonial py-4 px-3">
-                        <blockquote class="px-3 ml-4">
-                            <p class="mb-0 font-weight-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                        </blockquote>
-                        <div class="testimonial-arrow-down"></div>
-                        <div class="testimonial-author pb-3 mt-1 ml-5">
-                            <div class="testimonial-author-thumbnail">
-                                <img src="img/avatars/avatar-3.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p><strong class="font-weight-extra-bold">جان اسنو</strong><span class="text-1">معمار</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonial testimonial-style-4 custom-testimonial py-4 px-3">
-                        <blockquote class="px-3 ml-4">
-                            <p class="mb-0 font-weight-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                        </blockquote>
-                        <div class="testimonial-arrow-down"></div>
-                        <div class="testimonial-author pb-3 mt-1 ml-5">
-                            <div class="testimonial-author-thumbnail">
-                                <img src="img/avatars/avatar-2.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p><strong class="font-weight-extra-bold">استیو جابز</strong><span class="text-1">مهندس</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonial testimonial-style-4 custom-testimonial py-4 px-3">
-                        <blockquote class="px-3 ml-4">
-                            <p class="mb-0 font-weight-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                        </blockquote>
-                        <div class="testimonial-arrow-down"></div>
-                        <div class="testimonial-author pb-3 mt-1 ml-5">
-                            <div class="testimonial-author-thumbnail">
-                                <img src="img/avatars/avatar-3.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p><strong class="font-weight-extra-bold">جان اسنو</strong><span class="text-1">معمار</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonial testimonial-style-4 custom-testimonial py-4 px-3">
-                        <blockquote class="px-3 ml-4">
-                            <p class="mb-0 font-weight-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                        </blockquote>
-                        <div class="testimonial-arrow-down"></div>
-                        <div class="testimonial-author pb-3 mt-1 ml-5">
-                            <div class="testimonial-author-thumbnail">
-                                <img src="img/avatars/avatar-2.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p><strong class="font-weight-extra-bold">استیو جابز</strong><span class="text-1">مهندس</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonial testimonial-style-4 custom-testimonial py-4 px-3">
-                        <blockquote class="px-3 ml-4">
-                            <p class="mb-0 font-weight-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                        </blockquote>
-                        <div class="testimonial-arrow-down"></div>
-                        <div class="testimonial-author pb-3 mt-1 ml-5">
-                            <div class="testimonial-author-thumbnail">
-                                <img src="img/avatars/avatar-3.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p><strong class="font-weight-extra-bold">جان اسنو</strong><span class="text-1">معمار</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="testimonial testimonial-style-4 custom-testimonial py-4 px-3">
-                        <blockquote class="px-3 ml-4">
-                            <p class="mb-0 font-weight-normal">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                        </blockquote>
-                        <div class="testimonial-arrow-down"></div>
-                        <div class="testimonial-author pb-3 mt-1 ml-5">
-                            <div class="testimonial-author-thumbnail">
-                                <img src="img/avatars/avatar-2.jpg" class="img-fluid rounded-circle" alt="">
-                            </div>
-                            <p><strong class="font-weight-extra-bold">استیو جابز</strong><span class="text-1">مهندس</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>
 {% endblock %}
