@@ -3,32 +3,32 @@
 	<div class="container container-lg py-md-4">
 		<div class="row justify-content-md-center py-5">
 			<div class="col-md-12 col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start mb-5 mb-lg-0 mt-4 mt-md-0">
-				<a href="#"><img src="{% static 'img/demos/construction-2/logo-1.png' %}" alt="Logo" class="img-fluid logo"></a>
+				<a href="#"><img src="{{ site_config.logo.url }}" alt="{{ site_config.company_name }} Logo" class="img-fluid logo"></a>
 			</div>
 			<div class="col-md-3 text-center text-md-left">
 				<p class="text-5 text-color-light font-weight-bold mb-3 mt-4 mt-lg-0">در ارتباط باشید</p>
 				<p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">آدرس</p>
-				<p class="text-3 mb-3 text-color-light">تبریز، فلکه دانشگاه، برج بلور، طبقه 456</p>
+				<p class="text-3 mb-3 text-color-light">{{ site_config.address }}</p>
 				<p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">تلفن</p>
-				<p class="text-3 mb-3 text-color-light">تماس رایگان <a href="tel:+1234567890" class="text-color-light ltr-text">(123) 456-7890</a></p>
+				<p class="text-3 mb-3 text-color-light"><a href="tel:+1234567890" class="text-color-light ltr-text">{{ site_config.phone }}</a></p>
 				<p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">ایمیل</p>
-				<p class="text-3 mb-3 "><a href="mailto:info@porto.com" class="text-color-light">mail@example.com</a></p>
+				<p class="text-3 mb-3 "><a href="mailto:info@porto.com" class="text-color-light">{{ site_config.email }}</a></p>
 				<p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">روزها/ساعات کاری</p>
-				<p class="text-3 mb-4 text-color-light">شنبه - پنجشنبه / 9 صبح - 5 عصر</p>
+				<p class="text-3 mb-4 text-color-light">{{ site_config.working_hours }}</p>
 				<ul class="social-icons social-icons-dark social-icons-clean">
 					<li class="social-icons-instagram">
-						<a href="http://www.instagram.com/" target="_blank" title="Instagram">
+						<a href="{{ site_config.instagram_url }}" target="_blank" title="Instagram">
 							<i class="fab fa-instagram font-weight-semibold"></i>
 						</a>
 					</li>
-					<li class="social-icons-twitter">
-						<a href="http://www.twitter.com/" target="_blank" title="Twitter">
-							<i class="fab fa-twitter font-weight-semibold"></i>
+					<li class="social-icons-telegram">
+						<a href="{{ site_config.bale_url }}" target="_blank" title="Telegram">
+							<i class="fab fa-telegram font-weight-semibold"></i>
 						</a>
 					</li>
-					<li class="social-icons-facebook">
-						<a href="http://www.facebook.com/" target="_blank" title="Facebook">
-							<i class="fab fa-facebook-f font-weight-semibold"></i>
+					<li class="social-icons-linkedin">
+						<a href="{{ site_config.linkedin }}" target="_blank" title="Linkedin">
+							<i class="fab fa-linkedin font-weight-semibold"></i>
 						</a>
 					</li>
 				</ul>
@@ -70,17 +70,6 @@
 				<p class="text-3 mb-0 text-color-light opacity-7">کف سازی</p>
 				<p class="text-3 mb-0 font-weight-bold text-color-light">تعمیر خانه - تهران / ایران</p>
 				<p class="text-3 font-weight-bold"><a href="#" class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
-			</div>
-		</div>
-	</div>
-	<div class="container container-lg">
-		<div class="footer-copyright footer-copyright-style-2 bg-color-secondary">
-			<div class="py-2">
-				<div class="row py-4">
-					<div class="col d-flex align-items-center justify-content-center">
-						<p class="text-3 text-color-light opacity-7">ارائه شده در وب‌سایت راست‌چین</p>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

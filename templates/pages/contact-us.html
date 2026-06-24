@@ -88,7 +88,7 @@
 							</div>
 							<div class="col-10 col-lg-11">
 								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">آدرس</h4>
-								<p class="mb-0">فلکه دانشگاه، برج بلور، طبقه 456</p>
+								<p class="mb-0">{{ site_config.address }}</p>
 							</div>
 						</div>
 						<hr>
@@ -98,7 +98,13 @@
 							</div>
 							<div class="col-10 col-lg-11">
 								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">شماره تلفن</h4>
-								<p class="mb-0"><a href="#" class="text-color-default"><span class="ltr-text">(800) 123 4567</span></a></p>
+								<p class="mb-0">
+									<a href="#" class="text-color-default">
+										<span class="ltr-text">
+											{{ site_config.phone }}
+										</span>
+									</a>
+								</p>
 							</div>
 						</div>
 						<hr>
@@ -108,7 +114,11 @@
 							</div>
 							<div class="col-10 col-lg-11">
 								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">آدرس ایمیل</h4>
-								<p class="mb-0"><a class="px-0 text-default" href="mailto:mail@domain.com">porto@construction.com</a></p>
+								<p class="mb-0">
+									<a class="px-0 text-default" href="mailto:mail@domain.com">
+										{{ site_config.email }}
+									</a>
+								</p>
 							</div>
 						</div>
 						<hr>
@@ -118,7 +128,9 @@
 							</div>
 							<div class="col-10 col-lg-11">
 								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">روزها/ساعات کاری</h4>
-								<p class="mb-1">شنبه - پنجشنبه / 9 صبح - 5 عصر</p>
+								<p class="mb-1">
+									{{ site_config.working_hours }}
+								</p>
 							</div>
 						</div>
 					</div>

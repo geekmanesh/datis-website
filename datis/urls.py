@@ -8,7 +8,7 @@ urlpatterns = [
     path("services/", include("services.urls")),
     path("projects/", include("projects.urls")),
     path("i18n/", include("django.conf.urls.i18n")),
-    path("admin/", admin.site.register, name="admin"),
+    path("admin/", admin.site.urls, name="admin"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

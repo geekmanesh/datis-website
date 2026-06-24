@@ -44,5 +44,9 @@ class SiteConfig(SingletonModel):
         verbose_name = _("Site Configuration")
         verbose_name_plural = _("Site Configuration")
 
+    @classmethod
+    def load(cls):
+        return cls.objects.first()
+
     def __str__(self):
         return self.company_name

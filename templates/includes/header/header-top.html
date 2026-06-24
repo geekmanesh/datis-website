@@ -6,11 +6,13 @@
                     <nav class="header-nav-top">
                         <ul class="nav nav-pills text-uppercase text-2">
                             <li class="nav-item nav-item-anim-icon">
-                                <a class="px-0" href="mailto:mail@domain.com"><i class="far fa-envelope text-4 left-0"></i> porto@construction.com</a>
+                                <a class="px-0" href="mailto:mail@domain.com"><i class="far fa-envelope text-4 left-0"></i>
+                                    {{ site_config.email }}
+                                </a>
                             </li>
                             <li class="nav-item nav-item-anim-icon pl-md-4">
                                 <span class="d-none d-md-block">
-                                    <i class="far fa-clock text-4"></i><span> شنبه - پنجشنبه 9:00 صبح - 6:00 عصر / جمعه - تعطیل</span>
+                                    <i class="far fa-clock text-4"></i><span>{{ site_config.working_hours }}</span>
                                 </span>
                             </li>
                         </ul>
@@ -21,9 +23,9 @@
             <div class="header-column justify-content-end">
                 <div class="header-row">
                     <ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean">
-                        <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                        <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li class="social-icons-telegram"><a href="{{ site_config.bale_url }}" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a></li>
+                        <li class="social-icons-instagram"><a href="{{ site_config.instagram_url }}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                        <li class="social-icons-linkedin"><a href="{{ site_config.linkedin_url }}" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
                     </ul>
                 </div>
             </div>
