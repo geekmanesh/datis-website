@@ -1,9 +1,9 @@
-from django.views.generic import TemplateView
+from django.views.generic import ListView
+
+from .models import Service
 
 
-class ServicesList(TemplateView):
+class ServicesListView(ListView):
+    model = Service
     template_name = "pages/services.html"
-
-
-class ServiceDetial(TemplateView):
-    template_name = "pages/services-details.html"
+    context_object_name = "services"
