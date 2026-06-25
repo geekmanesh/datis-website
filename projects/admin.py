@@ -5,7 +5,7 @@ from unfold.admin import ModelAdmin
 from unfold.contrib.forms.widgets import WysiwygWidget
 
 from .forms import ProjectForm
-from .models import Project, ProjectCategory, ProjectImage
+from .models import Project, Category, ProjectImage
 
 
 class ProjectImageInline(admin.TabularInline):  # or StackedInline
@@ -40,6 +40,6 @@ class ProjectAdmin(ModelAdmin):
     )
 
 
-@admin.register(ProjectCategory)
-class ProjectCategoryAdmin(admin.ModelAdmin):
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
     list_display = ["name"]

@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from unidecode import unidecode
 
 
-class ProjectCategory(models.Model):
+class Category(models.Model):
     name = models.CharField(
         max_length=120,
         blank=False,
@@ -15,9 +15,22 @@ class ProjectCategory(models.Model):
             "Category name",
         ),
     )
+    slug = models.SlugField(unique=True, blank=True, editable=False)
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug and self.name:
+            ascii_name = unidecode(self.name)
+            base_slug = slugify(ascii_name)
+            slug = base_slug
+            counter = 1
+            while Project.objects.filter(slug=slug).exists():
+                slug = f"{base_slug}-{counter}"
+                counter += 1
+            self.slug = slug
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = _("Category")
@@ -26,8 +39,8 @@ class ProjectCategory(models.Model):
 
 class Project(models.Model):
     class StatusChoices(models.TextChoices):
-        DONE = "done", _("Done")
-        IN_PROGRESS = "in-progress", _("In Progress")
+        DONE = "done", "تکمیل شده"
+        IN_PROGRESS = "in-progress", "درحال انجام"
 
     id = models.UUIDField(
         primary_key=True, blank=False, null=False, default=uuid.uuid4, db_index=True
@@ -46,10 +59,10 @@ class Project(models.Model):
     )
     cost = models.PositiveBigIntegerField(verbose_name=_("Cost"))
     category = models.ForeignKey(
-        ProjectCategory,
-        null=True,
+        Category,
+        null=False,
         blank=False,
-        on_delete=models.SET_NULL,
+        on_delete=models.CASCADE,
         verbose_name=_("Category"),
     )
 
