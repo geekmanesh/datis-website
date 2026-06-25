@@ -16,6 +16,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "faker>=40.23.0",
     "ruff>=0.15.18",
 ]
 

@@ -2,73 +2,87 @@
 {% load static %}
 
 {% block content %}
-<section class="page-header bg-color-tertiary custom-page-header page-header-modern page-header-background page-header-background-sm parallax mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.2}" data-image-src="{% static 'img/demos/construction-2/page-header.jpg' %}">
+<section
+	class="page-header bg-color-tertiary custom-page-header page-header-modern page-header-background page-header-background-sm parallax mt-0"
+	data-plugin-parallax
+	data-plugin-options="{'speed': 1.2}"
+	data-image-src="{% static 'img/demos/construction-2/page-header.jpg' %}"
+>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 align-self-center">
 				<ul class="breadcrumb custom-breadcrumb d-block text-center text-4">
-					<li><a href="#">خانه</a></li>
-					<li class="active">پروژه ها</li>
+					<li><a href="{% url 'home' %}">خانه</a></li>
+					<li><a href="{% url 'projects' %}">پروژه ها</a></li>
+					<li class="active">{{ project.name }}</li>
 				</ul>
 			</div>
+
 			<div class="col-md-12 align-self-center p-static text-center mt-1">
-				<h1 class="font-weight-bold text-color-secondary text-11 primary-font">ساختمان پورتو</h1>
+				<h1 class="font-weight-bold text-color-secondary text-11 primary-font">
+					{{ project.name }}
+				</h1>
 			</div>
 		</div>
 	</div>
 </section>
 
 <div class="container container-lg pt-4">
-	<div class="row">
-		<div class="col">
-			<p class="text-4">
-				لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز 
-			</p>
-			<p>
-				لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها
-			</p>
-		</div>
-	</div>
-
 	<div class="row pb-5 mb-3">
-		<div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+		<div
+			class="col appear-animation"
+			data-appear-animation="fadeInUpShorter"
+			data-appear-animation-delay="200"
+		>
 			<div class="row">
+
 				<div class="col-lg-6 mb-4 mb-lg-0">
 					<div class="thumb-gallery">
-						<div class="owl-carousel owl-theme manual thumb-gallery-detail mt-3 mb-0" id="customThumbGalleryDetail">
-							<div>
-								<span class="img-thumbnail img-thumbnail-no-borders d-block">
-									<img alt="Project Image" src="{% static 'img/demos/construction-2/portfolio/portfolio-1.jpg' %}" class="img-fluid">
-								</span>
-							</div>
-							<div>
-								<span class="img-thumbnail img-thumbnail-no-borders d-block">
-									<img alt="Project Image" src="{% static 'img/demos/construction-2/portfolio/portfolio-1-2.jpg' %}" class="img-fluid">
-								</span>
-							</div>
-							<div>
-								<span class="img-thumbnail img-thumbnail-no-borders d-block">
-									<img alt="Project Image" src="{% static 'img/demos/construction-2/portfolio/portfolio-1-3.jpg' %}" class="img-fluid">
-								</span>
-							</div>
+
+						<div
+							class="owl-carousel owl-theme manual thumb-gallery-detail mt-3 mb-0"
+							id="customThumbGalleryDetail"
+						>
+							{% for image in project.images.all %}
+								<div>
+									<span class="img-thumbnail img-thumbnail-no-borders d-block">
+										<img
+											src="{{ image.image.url }}"
+											alt="{{ project.name }}"
+											class="img-fluid"
+										>
+									</span>
+								</div>
+							{% empty %}
+								<div>
+									<span class="img-thumbnail img-thumbnail-no-borders d-block">
+										<img
+											src="{% static 'img/no-image.jpg' %}"
+											alt="{{ project.name }}"
+											class="img-fluid"
+										>
+									</span>
+								</div>
+							{% endfor %}
 						</div>
-						<div class="owl-carousel owl-theme manual thumb-gallery-thumbs mt-3 mb-0" id="customThumbGalleryThumbs">
-							<div>
-								<span class="img-thumbnail img-thumbnail-no-borders d-block cur-pointer">
-									<img alt="Project Image" src="{% static 'img/demos/construction-2/portfolio/portfolio-1.jpg' %}" class="img-fluid">
-								</span>
-							</div>
-							<div>
-								<span class="img-thumbnail img-thumbnail-no-borders d-block cur-pointer">
-									<img alt="Project Image" src="{% static 'img/demos/construction-2/portfolio/portfolio-1-2.jpg' %}" class="img-fluid">
-								</span>
-							</div>
-							<div>
-								<span class="img-thumbnail img-thumbnail-no-borders d-block cur-pointer">
-									<img alt="Project Image" src="{% static 'img/demos/construction-2/portfolio/portfolio-1-3.jpg' %}" class="img-fluid">
-								</span>
-							</div>
+
+						<div
+							class="owl-carousel owl-theme manual thumb-gallery-thumbs mt-3 mb-0"
+							id="customThumbGalleryThumbs"
+						>
+							{% for image in project.images.all %}
+								<div>
+									<span class="img-thumbnail img-thumbnail-no-borders d-block cur-pointer">
+										<img
+											src="{{ image.image.url }}"
+											alt="{{ project.name }}"
+											class="img-fluid"
+										>
+									</span>
+								</div>
+							{% endfor %}
 						</div>
+
 					</div>
 				</div>
 
@@ -76,45 +90,84 @@
 					<div class="custom-card-style-2">
 						<div class="col my-5">
 							<div class="row px-5 flex-column">
+								
 								<div class="row px-3 mb-3">
-									<h3 class="text-secondary font-weight-bold text-capitalize mb-3">اطلاعات پروژه</h3>
-									<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه</p>
+									<h3 class="text-secondary font-weight-bold mb-3">
+										اطلاعات پروژه
+									</h3>
 								</div>
+								
+
 								<div class="row flex-column px-3 mb-1">
-									<h4 class="text-secondary text-4 font-weight-bold text-capitalize mb-1">مکان پروژه</h4>
-									<p class="mb-0">فلکه دانشگاه، برج بلور، طبقه 456</p>
-								</div>
-								<hr>
-								<div class="row flex-column px-3 mb-1">
-									<h4 class="text-secondary text-4 font-weight-bold text-capitalize mb-1 pt-1">نوع پروژه</h4>
-									<p class="mb-0">ساخت و ساز عمومی</p>
-								</div>
-								<hr>
-								<div class="row flex-column px-3 mb-1">
-									<h4 class="text-secondary text-4 font-weight-bold text-capitalize mb-1 pt-1">هزینه پروژه</h4>
-									<p class="mb-0">100,000,000 تومان</p>
-								</div>
-								<hr>
-								<div class="row flex-column px-3 mb-1">
-									<h4 class="text-secondary text-4 font-weight-bold text-capitalize mb-1 pt-1">مشتری</h4>
-									<p class="mb-0">مایکروسافت</p>
-								</div>
-								<hr>
-								<div class="row flex-column px-3">
-									<h4 class="text-secondary text-4 font-weight-bold text-capitalize mb-2 pt-1">وضعیت پروژه</h4>
-									<p class="mb-2">پیشرفت کلی</p>
-									<div class="custom-progress-bar progress">
-										<div class="progress-bar progress-bar-secondary" data-appear-progress-animation="65%">
-											<span class="progress-bar-tooltip">65%</span>
+									<h4 class="text-secondary text-4 font-weight-bold mb-1">
+										توضیحات پروژه
+									</h4>
+
+									<div class="row">
+										<div class="col">
+											<p class="text-4">
+												{{ project.description|safe }}
+											</p>
 										</div>
 									</div>
 								</div>
+
+								<hr>
+								
+								<div class="row flex-column px-3 mb-1">
+									<h4 class="text-secondary text-4 font-weight-bold mb-1">
+										نام پروژه
+									</h4>
+
+									<p class="mb-0">
+										{{ project.category.name }}
+									</p>
+								</div>
+
+								<hr>
+
+								<div class="row flex-column px-3 mb-1">
+									<h4 class="text-secondary text-4 font-weight-bold mb-1 pt-1">
+										هزینه پروژه
+									</h4>
+
+									<p class="mb-0">
+										{{ project.cost }} تومان
+									</p>
+								</div>
+
+								<hr>
+
+								<div class="row flex-column px-3 mb-1">
+									<h4 class="text-secondary text-4 font-weight-bold mb-1 pt-1">
+										مشتری
+									</h4>
+
+									<p class="mb-0">
+										{{ project.client }}
+									</p>
+								</div>
+
+								<hr>
+
+								<div class="row flex-column px-3">
+									<h4 class="text-secondary text-4 font-weight-bold mb-1 pt-1">
+										وضعیت پروژه
+									</h4>
+
+									<p class="mb-0">
+										{{ project.get_status_display }}
+									</p>
+								</div>
+
 							</div>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
+
 </div>
 {% endblock %}
