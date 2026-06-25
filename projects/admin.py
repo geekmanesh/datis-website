@@ -5,7 +5,7 @@ from unfold.admin import ModelAdmin
 from unfold.contrib.forms.widgets import WysiwygWidget
 
 from .forms import ProjectForm
-from .models import Project, Category, ProjectImage
+from .models import Category, Project, ProjectImage
 
 
 class ProjectImageInline(admin.TabularInline):  # or StackedInline

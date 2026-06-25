@@ -1,11 +1,11 @@
-from pathlib import Path
 import random
+from pathlib import Path
 
 from django.core.files import File
 from django.core.management.base import BaseCommand
 from faker import Faker
 
-from projects.models import Project, Category, ProjectImage
+from projects.models import Category, Project, ProjectImage
 
 fake = Faker()
 
