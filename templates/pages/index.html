@@ -360,12 +360,12 @@
         </div>
 
         <ul class="nav nav-pills sort-source sort-source-style-3 d-none" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'packery', 'filter': '*'}">
-            <li class="nav-item active" data-option-value="*"><a class="nav-link text-1 text-uppercase active" href="#">نمایش همه</a></li>
+            <li class="nav-item active" data-option-value="*"><a class="nav-link text-1 text-uppercase active" href="{% url 'projects' %}">نمایش همه</a></li>
         </ul>
 
         <div class="row">
             <div class="col text-center pb-4">
-                <a href="demo-construction-2-projects.html" class="btn btn-primary btn-outline custom-btn font-weight-extra-bold mt-3 px-5 py-3 border-width-4">مشاهده بیشتر +</a>
+                <a href="{% url 'projects' %}" class="btn btn-primary btn-outline custom-btn font-weight-extra-bold mt-3 px-5 py-3 border-width-4">مشاهده همه +</a>
             </div>
         </div>
 
@@ -394,7 +394,7 @@
                                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای
                                         </p>
                                         <p class="mb-2 font-weight-bold">
-                                            <a href="demo-construction-2-contact-us.html" class="link-hover-style-1 text-color-primary">درخواست خدمات +</a>
+                                            <a href="{% url 'contact-us' %}" class="link-hover-style-1 text-color-primary">درخواست خدمات +</a>
                                         </p>
                                     </div>
                                 </div>

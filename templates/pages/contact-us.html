@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-12 align-self-center">
 				<ul class="breadcrumb custom-breadcrumb d-block text-center text-4">
-					<li><a href="#">خانه</a></li>
+					<li><a href="{% url 'home' %}">خانه</a></li>
 					<li class="active">تماس با ما</li>
 				</ul>
 			</div>
@@ -99,7 +99,7 @@
 							<div class="col-10 col-lg-11">
 								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">شماره تلفن</h4>
 								<p class="mb-0">
-									<a href="#" class="text-color-default">
+									<a href="tel:{{ site_config.phone }}" class="text-color-default">
 										<span class="ltr-text">
 											{{ site_config.phone }}
 										</span>
@@ -115,7 +115,7 @@
 							<div class="col-10 col-lg-11">
 								<h4 class="text-secondary font-weight-bold text-capitalize mb-1">آدرس ایمیل</h4>
 								<p class="mb-0">
-									<a class="px-0 text-default" href="mailto:mail@domain.com">
+									<a class="px-0 text-default" href="mailto:{{ site_config.email }}">
 										{{ site_config.email }}
 									</a>
 								</p>

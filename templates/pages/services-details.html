@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-12 align-self-center">
 				<ul class="breadcrumb custom-breadcrumb d-block text-center text-4">
-					<li><a href="#">خانه</a></li>
+					<li><a href="{% url 'home' %}">خانه</a></li>
 					<li class="active">خدمات</li>
 				</ul>
 			</div>
@@ -74,7 +74,7 @@
 							</div>
 							<div class="col-md-10 text-center text-md-left">
 								<h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">آدرس ایمیل</h4>
-								<p class="line-height-8 pt-1 my-n1"><a class="px-0 text-default" href="mailto:mail@domain.com">porto@construction.com</a></p>
+								<p class="line-height-8 pt-1 my-n1"><a class="px-0 text-default" href="mailto:{{ site_config.email }}">site_config.email</a></p>
 							</div>
 						</div>
 					</div>
