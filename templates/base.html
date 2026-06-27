@@ -36,7 +36,7 @@
 
 	</head>
 	<body>
-        {% include 'includes/header/base.html' %}
+        {% include 'layouts/header/base.html' %}
 		<div class="body">
 			
 
@@ -44,10 +44,10 @@
                 {% block content %}
                 {% endblock %}
             </div>
-			{% include 'includes/cta.html' %}
-			{% include 'includes/footer.html' %}
+			{% include 'layouts/cta.html' %}
+			{% include 'layouts/footer/footer.html' %}
 		</div>
-        {% include 'includes/scripts.html' %}
+        {% include 'layouts/scripts.html' %}
 	</body>
 
 </html>
