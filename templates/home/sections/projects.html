@@ -1,0 +1,72 @@
+{% load static %}
+
+<section class="section bg-light border-0 py-0 my-2">
+    <div class="container container-lg">
+        <div class="row">
+            <div class="col">
+                <p class="mb-1 text-uppercase">نمونه کارهای ویژه</p>
+                <h3 class="text-secondary font-weight-bold text-capitalize text-7 mb-2">نمونه‌کارهای ما</h3>
+            </div>
+        </div>
+            
+        <div class="sort-destination-loader sort-destination-loader-showing m-0 mt-4 p-0">
+            <div class="row row-gutter-sm portfolio-list sort-destination" data-sort-id="portfolio">							
+                <div class="col-sm-6 isotope-item">
+                    <div class="portfolio-item mb-3 pb-1">
+                        <a href="demo-construction-2-projects-details.html">
+                            <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
+                                <span class="thumb-info-wrapper">
+                                    <img src="{% static 'img/demos/construction-2/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 isotope-item">
+                    <div class="portfolio-item mb-3 mb-md-5 mb-lg-3 pb-1">
+                        <a href="demo-construction-2-projects-details.html">
+                            <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
+                                <span class="thumb-info-wrapper">
+                                    <img src="{% static 'img/demos/construction-2/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 isotope-item">
+                    <div class="portfolio-item mb-3 pb-1">
+                        <a href="demo-construction-2-projects-details.html">
+                            <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
+                                <span class="thumb-info-wrapper">
+                                    <img src="{% static 'img/demos/construction-2/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 isotope-item">
+                    <div class="portfolio-item mb-3 pb-1">
+                        <a href="demo-construction-2-projects-details.html">
+                            <span class="thumb-info thumb-info-no-borders thumb-info-lighten thumb-info-bottom-info thumb-info-bottom-info-dark thumb-info-bottom-info-show-more thumb-info-no-zoom border-radius-0">
+                                <span class="thumb-info-wrapper">
+                                    <img src="{% static 'img/demos/construction-2/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>	
+            </div>
+        </div>
+
+        <ul class="nav nav-pills sort-source sort-source-style-3 d-none" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'packery', 'filter': '*'}">
+            <li class="nav-item active" data-option-value="*"><a class="nav-link text-1 text-uppercase active" href="{% url 'projects' %}">نمایش همه</a></li>
+        </ul>
+
+        <div class="row">
+            <div class="col text-center pb-4">
+                <a href="{% url 'projects' %}" class="btn btn-primary btn-outline custom-btn font-weight-extra-bold mt-3 px-5 py-3 border-width-4">مشاهده همه +</a>
+            </div>
+        </div>
+
+    </div>
+</section>
