@@ -5,7 +5,7 @@ from .models import Category, Project
 
 class ProjectsListView(ListView):
     model = Project
-    template_name = "pages/projects.html"
+    template_name = "projects/list.html"
     context_object_name = "projects"
 
     def get_queryset(self):
@@ -21,7 +21,7 @@ class ProjectsListView(ListView):
 
 class ProjectDetailView(DetailView):
     model = Project
-    template_name = "pages/projects-details.html"
+    template_name = "projects/detail.html"
     context_object_name = "project"
     slug_field = "slug"
     slug_url_kwarg = "slug"
