@@ -34,63 +34,27 @@
             <div class="col">
                 <div class="featured-boxes featured-boxes-style-7">
                     <div class="row">
-                        <div class="col-lg-4 appear-animation"
-                             data-appear-animation="fadeInUpShorter"
-                             data-appear-animation-delay="150">
-                            <div class="featured-box custom-featured-box featured-box-primary featured-box-effect-7">
-                                <div class="box-content d-flex text-left align-items-center">
-                                    <div>
-                                        <i class="icon-featured fas fa-building text-8 text-secondary ml-0"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-weight-bold text-5 text-secondary my-2">ساخت و ساز ساختمان</h4>
-                                        <p class="mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
-                                        <p class="text-2 font-weight-semibold mb-0">
-                                            <a href="demo-construction-2-services-details.html"
-                                               class="link-hover-style-1 text-primary">بیشتر بخوانید +</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 appear-animation"
-                             data-appear-animation="fadeInUpShorter"
-                             data-appear-animation-delay="150">
-                            <div class="featured-box custom-featured-box featured-box-primary featured-box-effect-7">
-                                <div class="box-content d-flex text-left align-items-center">
-                                    <div>
-                                        <i class="icon-featured fas fa-home text-8 text-secondary ml-0"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-weight-bold text-5 text-secondary my-2">ساخت و ساز خانه</h4>
-                                        <p class="mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
-                                        <p class="text-2 font-weight-semibold mb-0">
-                                            <a href="demo-construction-2-services-details.html"
-                                               class="link-hover-style-1 text-primary">بیشتر بخوانید +</a>
-                                        </p>
+                        {% for service in services %}
+                            <div class="col-lg-4 appear-animation"
+                                 data-appear-animation="fadeInUpShorter"
+                                 data-appear-animation-delay="150">
+                                <div class="featured-box custom-featured-box featured-box-primary featured-box-effect-7">
+                                    <div class="box-content d-flex text-left align-items-center">
+                                        <div>
+                                            <i class="icon-featured fas fa-home text-8 text-secondary ml-0"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-weight-bold text-5 text-secondary my-2">{{ service.name }}</h4>
+                                            <p class="mb-2">{{ service.short_description }}</p>
+                                            <p class="text-2 font-weight-semibold mb-0">
+                                                <a href="{% url 'service-detail' service.slug %}"
+                                                   class="link-hover-style-1 text-primary">بیشتر بخوانید +</a>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 appear-animation"
-                             data-appear-animation="fadeInUpShorter"
-                             data-appear-animation-delay="150">
-                            <div class="featured-box custom-featured-box featured-box-primary featured-box-effect-7">
-                                <div class="box-content d-flex text-left align-items-center">
-                                    <div>
-                                        <i class="icon-featured fas fa-clipboard text-8 text-secondary ml-0"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-weight-bold text-5 text-secondary my-2">مدیریت پروژه</h4>
-                                        <p class="mb-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</p>
-                                        <p class="text-2 font-weight-semibold mb-0">
-                                            <a href="demo-construction-2-services-details.html"
-                                               class="link-hover-style-1 text-primary">بیشتر بخوانید +</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

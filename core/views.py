@@ -17,6 +17,11 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
     template_name = "about-us/about-us.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["services"] = Service.objects.all()[0:3]
+        return context
+
 
 class ContactPageView(TemplateView):
     template_name = "contact-us/contact-us.html"
