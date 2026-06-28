@@ -28,11 +28,8 @@
                         <ul class="nav nav-list flex-column mb-0 p-relative right-9 mb-4">
                             {% for service in services %}
                                 <li class="nav-item">
-                                    <a 
-                                        class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative"
-                                        href="{% url 'service-detail' service.slug %}">
-                                        {{ service.name }}
-                                    </a>
+                                    <a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative"
+                                       href="{% url 'service-detail' service.slug %}">{{ service.name }}</a>
                                 </li>
                             {% endfor %}
                         </ul>
@@ -44,7 +41,6 @@
                         <div class="flex-column">
                             <div class="row px-3 mb-4 pb-2">
                                 <h3 class="text-color-secondary text-capitalize font-weight-bold text-5 m-0 pt-2 pb-1 w-100">اطلاعات تماس</h3>
-                                <p class="pt-1 mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
                             </div>
                             <div class="row px-lg-3 align-items-center">
                                 <div class="col-md-2 pb-3 pb-lg-0 text-center">
@@ -52,7 +48,7 @@
                                 </div>
                                 <div class="col-md-10 text-center text-md-left">
                                     <h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">آدرس</h4>
-                                    <p class="line-height-8 pt-1 my-n1">فلکه دانشگاه، برج بلور، طبقه 456</p>
+                                    <p class="line-height-8 pt-1 my-n1">{{ site_config.address }}</p>
                                 </div>
                             </div>
                             <hr>
@@ -62,7 +58,7 @@
                                 </div>
                                 <div class="col-md-10 text-center text-md-left">
                                     <h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">شماره تلفن</h4>
-                                    <p class="line-height-8 pt-1 my-n1"><span class="ltr-text">(800) 123-4567</span></p>
+                                    <p class="line-height-8 pt-1 my-n1"><span class="ltr-text">{{ site_config.phone }}</span></p>
                                 </div>
                             </div>
                             <hr>
@@ -72,7 +68,7 @@
                                 </div>
                                 <div class="col-md-10 text-center text-md-left">
                                     <h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">آدرس ایمیل</h4>
-                                    <p class="line-height-8 pt-1 my-n1"><a class="px-0 text-default" href="mailto:{{ site_config.email }}">site_config.email</a></p>
+                                    <p class="line-height-8 pt-1 my-n1"><a class="px-0 text-default" href="mailto:{{ site_config.email }}">{{ site_config.email }}</a></p>
                                 </div>
                             </div>
                         </div>
