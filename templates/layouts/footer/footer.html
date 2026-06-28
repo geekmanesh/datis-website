@@ -1,59 +1,71 @@
 {% load static %}
-<footer id="footer" class="bg-color-secondary border-top-0 mt-0 custom-footer">
-	<div class="container container-lg py-md-4">
-		<div class="row justify-content-md-center py-5">
-			<div class="col-md-12 col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start mb-5 mb-lg-0 mt-4 mt-md-0">
-				<a href="#"><img src="{{ site_config.logo.url }}" alt="{{ site_config.company_name }} Logo" class="img-fluid logo"></a>
-			</div>
-			<div class="col-md-3 text-center text-md-left">
-				<p class="text-5 text-color-light font-weight-bold mb-3 mt-4 mt-lg-0">در ارتباط باشید</p>
-				<p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">آدرس</p>
-				<p class="text-3 mb-3 text-color-light">{{ site_config.address }}</p>
-				<p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">تلفن</p>
-				<p class="text-3 mb-3 text-color-light"><a href="tel:{{ site_config.phone }}" class="text-color-light ltr-text">{{ site_config.phone }}</a></p>
-				<p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">ایمیل</p>
-				<p class="text-3 mb-3 "><a href="mailto:{{ site_config.email}}" class="text-color-light">{{ site_config.email }}</a></p>
-				<p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">روزها/ساعات کاری</p>
-				<p class="text-3 mb-4 text-color-light">{{ site_config.working_hours }}</p>
-				<ul class="social-icons social-icons-dark social-icons-clean">
-					<li class="social-icons-instagram">
-						<a href="{{ site_config.instagram_url }}" target="_blank" title="Instagram">
-							<i class="fab fa-instagram font-weight-semibold"></i>
-						</a>
-					</li>
-					<li class="social-icons-telegram">
-						<a href="{{ site_config.telegram_url }}" target="_blank" title="Telegram">
-							<i class="fab fa-telegram font-weight-semibold"></i>
-						</a>
-					</li>
-					<li class="social-icons-linkedin">
-						<a href="{{ site_config.linkedin_url }}" target="_blank" title="Linkedin">
-							<i class="fab fa-linkedin font-weight-semibold"></i>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-md-4 text-center text-md-left mt-5 mt-md-0 mb-5 mb-lg-0">
-				<p class="text-5 text-color-light font-weight-bold mb-3 mt-4 mt-lg-0">لینک های مفید</p>
-				<div class="row opacity-7">
-					<div class="col-md-5">
-						<p class="mb-1"><a href="{% url 'contact-us' %}" class="text-3 text-color-light link-hover-style-1">تماس با ما</a></p>
-						<p class="mb-1"><a href="{% url 'services' %}" class="text-3 text-color-light link-hover-style-1">خدمات ما</a></p>
-						<p class="mb-1"><a href="{% url 'about-us' %}" class="text-3 text-color-light link-hover-style-1">درباره ما</a></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 text-center text-md-left">
-				<p class="text-5 text-color-light font-weight-bold mb-3 mt-4 mt-lg-0">پروژه های اخیر</p>
-				
-				<p class="text-3 mb-0 text-color-light opacity-7">نقاشی، لوله کشی</p>
-				<p class="text-3 mb-0 font-weight-bold text-color-light">بازسازی خانه - تبریز / ایران</p>
-				<p class="text-3 mb-4 font-weight-bold"><a href="#" class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
-
-				<p class="text-3 mb-0 text-color-light opacity-7">تعمیر سیم کشی</p>
-				<p class="text-3 mb-0 font-weight-bold text-color-light">تعمیر منزل - آنکارا / ترکیه</p>
-				<p class="text-3 mb-4 font-weight-bold"><a href="#" class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
-			</div>
-		</div>
-	</div>
+<footer id="footer"
+        class="bg-color-secondary border-top-0 mt-0 custom-footer">
+    <div class="container container-lg py-md-4">
+        <div class="row justify-content-md-center py-5">
+            <div class="col-md-12 col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start mb-5 mb-lg-0 mt-4 mt-md-0">
+                <a href="#">
+                    <img src="{{ site_config.logo.url }}"
+                         alt="{{ site_config.company_name }} Logo"
+                         class="img-fluid logo">
+                </a>
+            </div>
+            <div class="col-md-3 text-center text-md-left">
+                <p class="text-5 text-color-light font-weight-bold mb-3 mt-4 mt-lg-0">در ارتباط باشید</p>
+                <p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">آدرس</p>
+                <p class="text-3 mb-3 text-color-light">{{ site_config.address }}</p>
+                <p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">تلفن</p>
+                <p class="text-3 mb-3 text-color-light"><a href="tel:{{ site_config.phone }}" class="text-color-light ltr-text">{{ site_config.phone }}</a></p>
+                <p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">ایمیل</p>
+                <p class="text-3 mb-3 "><a href="mailto:{{ site_config.email }}" class="text-color-light">{{ site_config.email }}</a></p>
+                <p class="text-3 mb-0 font-weight-bold text-color-light opacity-7 text-uppercase">روزها/ساعات کاری</p>
+                <p class="text-3 mb-4 text-color-light">{{ site_config.working_hours }}</p>
+                <ul class="social-icons social-icons-dark social-icons-clean">
+                    <li class="social-icons-instagram">
+                        <a href="{{ site_config.instagram_url }}"
+                           target="_blank"
+                           title="Instagram">
+                            <i class="fab fa-instagram font-weight-semibold"></i>
+                        </a>
+                    </li>
+                    <li class="social-icons-telegram">
+                        <a href="{{ site_config.telegram_url }}"
+                           target="_blank"
+                           title="Telegram">
+                            <i class="fab fa-telegram font-weight-semibold"></i>
+                        </a>
+                    </li>
+                    <li class="social-icons-linkedin">
+                        <a href="{{ site_config.linkedin_url }}"
+                           target="_blank"
+                           title="Linkedin">
+                            <i class="fab fa-linkedin font-weight-semibold"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-center text-md-left mt-5 mt-md-0 mb-5 mb-lg-0">
+                <p class="text-5 text-color-light font-weight-bold mb-3 mt-4 mt-lg-0">لینک های مفید</p>
+                <div class="row opacity-7">
+                    <div class="col-md-5">
+                        <p class="mb-1"><a href="{% url 'contact-us' %}"
+   class="text-3 text-color-light link-hover-style-1">تماس با ما</a></p>
+                        <p class="mb-1"><a href="{% url 'services' %}"
+   class="text-3 text-color-light link-hover-style-1">خدمات ما</a></p>
+                        <p class="mb-1"><a href="{% url 'about-us' %}"
+   class="text-3 text-color-light link-hover-style-1">درباره ما</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center text-md-left">
+                <p class="text-5 text-color-light font-weight-bold mb-3 mt-4 mt-lg-0">پروژه های اخیر</p>
+                <p class="text-3 mb-0 text-color-light opacity-7">نقاشی، لوله کشی</p>
+                <p class="text-3 mb-0 font-weight-bold text-color-light">بازسازی خانه - تبریز / ایران</p>
+                <p class="text-3 mb-4 font-weight-bold"><a href="#" class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
+                <p class="text-3 mb-0 text-color-light opacity-7">تعمیر سیم کشی</p>
+                <p class="text-3 mb-0 font-weight-bold text-color-light">تعمیر منزل - آنکارا / ترکیه</p>
+                <p class="text-3 mb-4 font-weight-bold"><a href="#" class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
+            </div>
+        </div>
+    </div>
 </footer>

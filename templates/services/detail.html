@@ -1,119 +1,96 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-<section class="page-header bg-color-tertiary custom-page-header page-header-modern page-header-background page-header-background-sm parallax mt-0" data-plugin-parallax data-plugin-options="{'speed': 1.2}" data-image-src="{% static 'img/demos/construction-2/page-header.jpg' %}">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 align-self-center">
-				<ul class="breadcrumb custom-breadcrumb d-block text-center text-4">
-					<li><a href="{% url 'home' %}">خانه</a></li>
-					<li class="active">خدمات</li>
-				</ul>
-			</div>
-			<div class="col-md-12 align-self-center p-static text-center mt-1">
-				<h1 class="font-weight-bold text-color-secondary text-11 primary-font">
-					{{ service.name }}
-				</h1>
-			</div>
-		</div>
-	</div>
-</section>
-
-<div class="container container-lg pt-4 pb-5 mb-2">
-	<div class="row">
-		<div class="col-lg-3 pb-4 pb-lg-0">
-
-			<aside class="sidebar">
-
-				<div class="px-3">
-					<h3 class="text-color-secondary text-capitalize font-weight-bold text-5 mt-0 mb-3">همه خدمات</h3>
-
-					<ul class="nav nav-list flex-column mb-0 p-relative right-9 mb-4">
-						<li class="nav-item"><a class="nav-link font-weight-bold text-primary text-3 border-0 my-1 p-relative" href="demo-construction-2-services-details.html">ساخت و ساز عمومی</a></li>
-						<li class="nav-item"><a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative" href="demo-construction-2-services-details.html">لوله کشی</a></li>
-						<li class="nav-item"><a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative" href="demo-construction-2-services-details.html">نقاشی</a></li>
-						<li class="nav-item"><a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative" href="demo-construction-2-services-details.html">پیش ساخت و ساز</a></li>
-					</ul>
-				</div>
-				
-				<div class="py-1 clearfix">
-					<hr class="my-2">
-				</div>
-
-				<div class="px-3 mt-4">
-
-					<div class="flex-column">
-						<div class="row px-3 mb-4 pb-2">
-							<h3 class="text-color-secondary text-capitalize font-weight-bold text-5 m-0 pt-2 pb-1 w-100">اطلاعات تماس</h3>
-							<p class="pt-1 mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
-						</div>
-						<div class="row px-lg-3 align-items-center">
-							<div class="col-md-2 pb-3 pb-lg-0 text-center">
-								<i class="fas fa-map-marker-alt text-8 text-secondary"></i>
-							</div>
-							<div class="col-md-10 text-center text-md-left">
-								<h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">آدرس</h4>
-								<p class="line-height-8 pt-1 my-n1">فلکه دانشگاه، برج بلور، طبقه 456</p>
-							</div>
-						</div>
-						<hr>
-						<div class="row px-lg-3 align-items-center">
-							<div class="col-md-2 pb-3 pb-lg-0 text-center">
-								<i class="fas fa-mobile-alt text-8 text-secondary"></i>
-							</div>
-							<div class="col-md-10 text-center text-md-left">
-								<h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">شماره تلفن</h4>
-								<p class="line-height-8 pt-1 my-n1"><span class="ltr-text">(800) 123-4567</span></p>
-							</div>
-						</div>
-						<hr>
-						<div class="row px-lg-3 align-items-center">
-							<div class="col-md-2 pb-3 pb-lg-0 text-center">
-								<i class="far fa-envelope text-7 text-secondary"></i>
-							</div>
-							<div class="col-md-10 text-center text-md-left">
-								<h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">آدرس ایمیل</h4>
-								<p class="line-height-8 pt-1 my-n1"><a class="px-0 text-default" href="mailto:{{ site_config.email }}">site_config.email</a></p>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-			</aside>
-
-		</div>
-		<div class="col-lg-9 mt-5 mt-lg-0">
-
-			<div
-				class="owl-carousel owl-theme service-gallery"
-				data-plugin-options='{
-					"items": 1,
-					"loop": true,
-					"nav": false,
-					"dots": true,
-					"autoplay": true,
-					"autoplayTimeout": 5000,
-					"autoplayHoverPause": true
-				}'
-			>
-				{% for image in service.images.all %}
-					<div class="service-slide">
-						<img
-							src="{{ image.image.url }}"
-							class="img-fluid w-100"
-							alt="{{ service.name }}"
-						>
-					</div>
-				{% endfor %}
-			</div>
-
-			<div class="mt-4">
-				{{ service.content|safe }}
-			</div>
-
-		</div>
-	</div>
-</div>
+    <section class="page-header bg-color-tertiary custom-page-header page-header-modern page-header-background page-header-background-sm parallax mt-0"
+             data-plugin-parallax
+             data-plugin-options="{'speed': 1.2}"
+             data-image-src="{% static 'img/demos/construction-2/page-header.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 align-self-center">
+                    <ul class="breadcrumb custom-breadcrumb d-block text-center text-4">
+                        <li><a href="{% url 'home' %}">خانه</a></li>
+                        <li class="active">خدمات</li>
+                    </ul>
+                </div>
+                <div class="col-md-12 align-self-center p-static text-center mt-1">
+                    <h1 class="font-weight-bold text-color-secondary text-11 primary-font">{{ service.name }}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container container-lg pt-4 pb-5 mb-2">
+        <div class="row">
+            <div class="col-lg-3 pb-4 pb-lg-0">
+                <aside class="sidebar">
+                    <div class="px-3">
+                        <h3 class="text-color-secondary text-capitalize font-weight-bold text-5 mt-0 mb-3">همه خدمات</h3>
+                        <ul class="nav nav-list flex-column mb-0 p-relative right-9 mb-4">
+                            <li class="nav-item"><a class="nav-link font-weight-bold text-primary text-3 border-0 my-1 p-relative"
+   href="demo-construction-2-services-details.html">ساخت و ساز عمومی</a></li>
+                            <li class="nav-item"><a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative"
+   href="demo-construction-2-services-details.html">لوله کشی</a></li>
+                            <li class="nav-item"><a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative"
+   href="demo-construction-2-services-details.html">نقاشی</a></li>
+                            <li class="nav-item"><a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative"
+   href="demo-construction-2-services-details.html">پیش ساخت و ساز</a></li>
+                        </ul>
+                    </div>
+                    <div class="py-1 clearfix">
+                        <hr class="my-2">
+                    </div>
+                    <div class="px-3 mt-4">
+                        <div class="flex-column">
+                            <div class="row px-3 mb-4 pb-2">
+                                <h3 class="text-color-secondary text-capitalize font-weight-bold text-5 m-0 pt-2 pb-1 w-100">اطلاعات تماس</h3>
+                                <p class="pt-1 mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                            </div>
+                            <div class="row px-lg-3 align-items-center">
+                                <div class="col-md-2 pb-3 pb-lg-0 text-center">
+                                    <i class="fas fa-map-marker-alt text-8 text-secondary"></i>
+                                </div>
+                                <div class="col-md-10 text-center text-md-left">
+                                    <h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">آدرس</h4>
+                                    <p class="line-height-8 pt-1 my-n1">فلکه دانشگاه، برج بلور، طبقه 456</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row px-lg-3 align-items-center">
+                                <div class="col-md-2 pb-3 pb-lg-0 text-center">
+                                    <i class="fas fa-mobile-alt text-8 text-secondary"></i>
+                                </div>
+                                <div class="col-md-10 text-center text-md-left">
+                                    <h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">شماره تلفن</h4>
+                                    <p class="line-height-8 pt-1 my-n1"><span class="ltr-text">(800) 123-4567</span></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row px-lg-3 align-items-center">
+                                <div class="col-md-2 pb-3 pb-lg-0 text-center">
+                                    <i class="far fa-envelope text-7 text-secondary"></i>
+                                </div>
+                                <div class="col-md-10 text-center text-md-left">
+                                    <h4 class="text-secondary font-weight-bold text-capitalize mb-1 text-4">آدرس ایمیل</h4>
+                                    <p class="line-height-8 pt-1 my-n1"><a class="px-0 text-default" href="mailto:{{ site_config.email }}">site_config.email</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-9 mt-5 mt-lg-0">
+                <div class="owl-carousel owl-theme service-gallery"
+                     data-plugin-options='{ "items": 1, "loop": true, "nav": false, "dots": true, "autoplay": true, "autoplayTimeout": 5000, "autoplayHoverPause": true }'>
+                    {% for image in service.images.all %}
+                        <div class="service-slide">
+                            <img src="{{ image.image.url }}"
+                                 class="img-fluid w-100"
+                                 alt="{{ service.name }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="mt-4">{{ service.content|safe }}</div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

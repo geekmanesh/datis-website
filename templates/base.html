@@ -1,53 +1,58 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html dir="rtl">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
-		<title>{{ site_config.title }}</title>
-		<meta name="keywords" content="HTML5 Template">
-		<meta name="description" content="Porto - Responsive HTML5 Template">
-		<meta name="author" content="Geekmanesh">
-
-		<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
-
-		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-
-		<link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/animate/animate.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/simple-line-icons/css/simple-line-icons.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css'%}">
-		<link rel="stylesheet" href="{% static 'vendor/owl.carousel/assets/owl.theme.default.min.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}">
-		<link rel="stylesheet" href="{% static 'css/theme.css' %}">
-		<link rel="stylesheet" href="{% static 'css/theme-elements.css' %}">
-		<link rel="stylesheet" href="{% static 'css/theme-blog.css' %}">
-		<link rel="stylesheet" href="{% static 'css/theme-shop.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/rs-plugin/css/settings.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/rs-plugin/css/layers.css' %}">
-		<link rel="stylesheet" href="{% static 'vendor/rs-plugin/css/navigation.css' %}">
-		<link rel="stylesheet" href="{% static 'css/demos/demo-construction-2.css' %}">
-		<link rel="stylesheet" href="{% static 'css/skins/skin-construction-2.css' %}"> 
-		<link rel="stylesheet" href="{% static 'css/custom.css' %}">
-		<script src="{% static 'vendor/modernizr/modernizr.min.js' %}"></script>
-
-	</head>
-	<body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{ site_config.title }}</title>
+        <meta name="keywords" content="HTML5 Template">
+        <meta name="description" content="Porto - Responsive HTML5 Template">
+        <meta name="author" content="Geekmanesh">
+        <link rel="shortcut icon"
+              href="{% static 'img/favicon.ico' %}"
+              type="image/x-icon">
+        <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet"
+              href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'vendor/animate/animate.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'vendor/simple-line-icons/css/simple-line-icons.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'vendor/owl.carousel/assets/owl.theme.default.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'vendor/magnific-popup/magnific-popup.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/theme-elements.css' %}">
+        <link rel="stylesheet" href="{% static 'css/theme-blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/theme-shop.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'vendor/rs-plugin/css/settings.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'vendor/rs-plugin/css/layers.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'vendor/rs-plugin/css/navigation.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'css/demos/demo-construction-2.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'css/skins/skin-construction-2.css' %}">
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+        <script src="{% static 'vendor/modernizr/modernizr.min.js' %}"></script>
+    </head>
+    <body>
         {% include 'layouts/header/base.html' %}
-		<div class="body">
-			
-
-			<div role="main" class="main">
-                {% block content %}
-                {% endblock %}
+        <div class="body">
+            <div role="main" class="main">
+                {% block content %}{% endblock %}
             </div>
-			{% include 'layouts/cta.html' %}
-			{% include 'layouts/footer/footer.html' %}
-		</div>
+            {% include 'layouts/cta.html' %}
+            {% include 'layouts/footer/footer.html' %}
+        </div>
         {% include 'layouts/scripts.html' %}
-	</body>
-
+    </body>
 </html>

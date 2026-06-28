@@ -6,29 +6,40 @@
                     <nav class="header-nav-top">
                         <ul class="nav nav-pills text-uppercase text-2">
                             <li class="nav-item nav-item-anim-icon">
-                                <a class="px-0" href="mailto:{{ site_config.email }}"><i class="far fa-envelope text-4 left-0"></i>
-                                    {{ site_config.email }}
-                                </a>
-                            </li>
-                            <li class="nav-item nav-item-anim-icon pl-md-4">
-                                <span class="d-none d-md-block">
-                                    <i class="far fa-clock text-4"></i><span>{{ site_config.working_hours }}</span>
-                                </span>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="header-column justify-content-end">
-                <div class="header-row">
-                    <ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean">
-                        <li class="social-icons-telegram"><a href="{{ site_config.telegram_url }}" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a></li>
-                        <li class="social-icons-instagram"><a href="{{ site_config.instagram_url }}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                        <li class="social-icons-linkedin"><a href="{{ site_config.linkedin_url }}" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+                            <a class="px-0" href="mailto:{{ site_config.email }}"><i class="far fa-envelope text-4 left-0"></i>
+                            {{ site_config.email }}
+                        </a>
+                    </li>
+                    <li class="nav-item nav-item-anim-icon pl-md-4">
+                        <span class="d-none d-md-block">
+                            <i class="far fa-clock text-4"></i><span>{{ site_config.working_hours }}</span>
+                        </span>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
+    <div class="header-column justify-content-end">
+        <div class="header-row">
+            <ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean">
+                <li class="social-icons-telegram">
+                    <a href="{{ site_config.telegram_url }}"
+                       target="_blank"
+                       title="Telegram"><i class="fab fa-telegram"></i></a>
+                </li>
+                <li class="social-icons-instagram">
+                    <a href="{{ site_config.instagram_url }}"
+                       target="_blank"
+                       title="Instagram"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="social-icons-linkedin">
+                    <a href="{{ site_config.linkedin_url }}"
+                       target="_blank"
+                       title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
 </div>
