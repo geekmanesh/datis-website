@@ -59,12 +59,11 @@
             </div>
             <div class="col-md-3 text-center text-md-left">
                 <p class="text-5 text-color-light font-weight-bold mb-3 mt-4 mt-lg-0">پروژه های اخیر</p>
-                <p class="text-3 mb-0 text-color-light opacity-7">نقاشی، لوله کشی</p>
-                <p class="text-3 mb-0 font-weight-bold text-color-light">بازسازی خانه - تبریز / ایران</p>
-                <p class="text-3 mb-4 font-weight-bold"><a href="#" class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
-                <p class="text-3 mb-0 text-color-light opacity-7">تعمیر سیم کشی</p>
-                <p class="text-3 mb-0 font-weight-bold text-color-light">تعمیر منزل - آنکارا / ترکیه</p>
-                <p class="text-3 mb-4 font-weight-bold"><a href="#" class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
+                {% for project in recent_projects %}
+                    <p class="text-3 mb-0 text-color-light opacity-7">{{ project.name }}</p>
+                    <p class="text-3 mb-0 font-weight-bold text-color-light">{{ project.category }}</p>
+                    <p class="text-3 mb-4 font-weight-bold"><a href="{% url 'project-detail' project.slug %}" class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
+                {% endfor %}
             </div>
         </div>
     </div>
