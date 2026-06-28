@@ -26,14 +26,15 @@
                     <div class="px-3">
                         <h3 class="text-color-secondary text-capitalize font-weight-bold text-5 mt-0 mb-3">همه خدمات</h3>
                         <ul class="nav nav-list flex-column mb-0 p-relative right-9 mb-4">
-                            <li class="nav-item"><a class="nav-link font-weight-bold text-primary text-3 border-0 my-1 p-relative"
-   href="demo-construction-2-services-details.html">ساخت و ساز عمومی</a></li>
-                            <li class="nav-item"><a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative"
-   href="demo-construction-2-services-details.html">لوله کشی</a></li>
-                            <li class="nav-item"><a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative"
-   href="demo-construction-2-services-details.html">نقاشی</a></li>
-                            <li class="nav-item"><a class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative"
-   href="demo-construction-2-services-details.html">پیش ساخت و ساز</a></li>
+                            {% for service in services %}
+                                <li class="nav-item">
+                                    <a 
+                                        class="nav-link font-weight-bold text-secondary text-3 border-0 my-1 p-relative"
+                                        href="{% url 'service-detail' service.slug %}">
+                                        {{ service.name }}
+                                    </a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="py-1 clearfix">
