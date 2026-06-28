@@ -5,34 +5,31 @@
                 <nav class="collapse">
                     <ul class="nav nav-pills" id="mainNav">
                         <li class="dropdown">
-                            <a class="dropdown-item active" href="{% url 'home' %}">
-                                خانه
-                            </a>
+                            <a class="dropdown-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
+                               href="{% url 'home' %}">خانه</a>
                         </li>
                         <li class="dropdown">
-                            <a class="dropdown-item" href="{% url 'about-us' %}">
-                                درباره ما
-                            </a>
+                            <a class="dropdown-item {% if request.resolver_match.url_name == 'about-us' %}active{% endif %}"
+                               href="{% url 'about-us' %}">درباره ما</a>
                         </li>
                         <li class="dropdown">
-                            <a class="dropdown-item" href="{% url 'projects' %}">
-                                پروژه ها
-                            </a>
+                            <a class="dropdown-item {% if request.resolver_match.url_name == 'projects' %}active{% endif %}"
+                               href="{% url 'projects' %}">پروژه ها</a>
                         </li>
                         <li class="dropdown">
-                            <a class="dropdown-item" href="{% url 'services' %}">
-                                خدمات
-                            </a>
+                            <a class="dropdown-item {% if request.resolver_match.url_name == 'services' %}active{% endif %}"
+                               href="{% url 'services' %}">خدمات</a>
                         </li>
                         <li class="dropdown">
-                            <a class="dropdown-item" href="{% url 'contact-us' %}">
-                                تماس با ما
-                            </a>
+                            <a class="dropdown-item {% if request.resolver_match.url_name == 'contact-us' %}active{% endif %}"
+                               href="{% url 'contact-us' %}">تماس با ما</a>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
+            <button class="btn header-btn-collapse-nav"
+                    data-toggle="collapse"
+                    data-target=".header-nav-main nav">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
