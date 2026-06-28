@@ -39,51 +39,5 @@
             {% endfor %}
         </div>
     </div>
-    <section class="container-fluid mb-5 mb-lg-0">
-        <div class="row">
-            <div class="col-lg-6 px-0">
-                <section class="section custom-angled section-angled bg-secondary border-top-0">
-                    <div class="section-angled-layer-top bg-light"></div>
-                    <div class="section-angled-layer-bottom bg-light d-none d-lg-block"></div>
-                    <div class="section-angled-content">
-                        <div class="container container-lg">
-                            <div class="row justify-content-lg-end py-3">
-                                <div class="col-lg-10 custom-col pt-5 pb-lg-5 mt-5 mb-lg-5 px-3 px-lg-1 pr-lg-3">
-                                    <div class="col px-0">
-                                        <p class="mb-1 text-uppercase">کارهای اضافی</p>
-                                        <h3 class="text-light font-weight-bold text-capitalize text-7 mb-2">خدمات ویژه</h3>
-                                    </div>
-                                    <div class="row pr-3">
-                                        <div class="col">
-                                            <p class="text-4 pt-2 mb-4">
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
-                                            </p>
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای
-                                            </p>
-                                            <p class="mb-2 font-weight-bold">
-                                                <a href="{% url 'contact-us' %}"
-                                                   class="link-hover-style-1 text-color-primary">درخواست خدمات +</a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="col-lg-6 px-0 d-none d-lg-flex">
-                <section class="section section-angled custom-angled section-angled-reverse section-center bg-dark border-top-0"
-                         style="background-image: url({% static 'img/demos/construction-2/services/services-1.jpg' %});
-                                background-position: right center;
-                                background-size: cover;
-                                flex: 1">
-                    <div class="section-angled-layer-top bg-light d-none d-lg-block"></div>
-                    <div class="section-angled-layer-bottom bg-light"></div>
-                    <div class="section-angled-content"></div>
-                </section>
-            </div>
-        </div>
-    </section>
+    {% include 'components/special-service.html' %}
 {% endblock %}
