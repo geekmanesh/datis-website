@@ -62,7 +62,8 @@
                 {% for project in recent_projects %}
                     <p class="text-3 mb-0 text-color-light opacity-7">{{ project.name }}</p>
                     <p class="text-3 mb-0 font-weight-bold text-color-light">{{ project.category }}</p>
-                    <p class="text-3 mb-4 font-weight-bold"><a href="{% url 'project-detail' project.slug %}" class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
+                    <p class="text-3 mb-4 font-weight-bold"><a href="{% url 'project-detail' project.slug %}"
+   class="link-hover-style-1 text-primary">مشاهده بیشتر +</a></p>
                 {% endfor %}
             </div>
         </div>
