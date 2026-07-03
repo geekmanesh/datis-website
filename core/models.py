@@ -1,6 +1,33 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from solo.models import SingletonModel
+from django.core.validators import MaxLengthValidator
+
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100, verbose_name=_("Name"))
+    phone = models.CharField(max_length=20, verbose_name=_("Phone"))
+    message = models.TextField(
+        blank=True,
+        validators=[
+            MaxLengthValidator(1000, message="پیام شما باید کمتر از ۱۰۰۰ کاراکتر باشد")
+        ],
+        verbose_name=_("Message"),
+    )
+
+    ip_address = models.GenericIPAddressField(
+        null=True, blank=True, verbose_name=_("IP address")
+    )
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Sent at"))
+    is_read = models.BooleanField(default=False, verbose_name=_("Read"))
+
+    class Meta:
+        verbose_name = _("Contact message")
+        verbose_name_plural = _("Contact messages")
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"{self.name} ({self.phone})"
 
 
 class SiteConfig(SingletonModel):
