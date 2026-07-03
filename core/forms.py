@@ -41,11 +41,9 @@ class ContactMessageForm(forms.ModelForm):
         return ""
 
     def clean_name(self):
-        MIN_NAME_LENGTH = 3
-
         name = self.cleaned_data["name"].strip()
 
-        if len(name) < MIN_NAME_LENGTH:
+        if len(name) < 3:
             raise forms.ValidationError("نام باید حداقل دارای سه کاراکتر باشد")
 
         return name

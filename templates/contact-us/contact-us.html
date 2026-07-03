@@ -39,16 +39,12 @@
                         {% endfor %}
                     {% endif %}
                     {% if form.non_field_errors %}
-                        <div class="alert alert-danger mt-4">
-                            {% for error in form.non_field_errors %}{{ error }}{% endfor %}
-                        </div>
+                        <div class="alert alert-danger mt-4">{% for error in form.non_field_errors %}{{ error }}{% endfor %}</div>
                     {% endif %}
                     <div class="form-row">
                         <div class="form-group col">
                             {{ form.name }}
-                            {% for error in form.name.errors %}
-                                <span class="text-danger text-1 d-block mt-1">{{ error }}</span>
-                            {% endfor %}
+                            {% for error in form.name.errors %}<span class="text-danger text-1 d-block mt-1">{{ error }}</span>{% endfor %}
                         </div>
                     </div>
                     <div class="form-row">
@@ -71,8 +67,7 @@
                         <div class="form-group col">
                             <input type="submit"
                                    value="ارسال پیام"
-                                   class="btn btn-outline btn-primary rounded-0 py-3 px-5 font-weight-semibold"
-                                   >
+                                   class="btn btn-outline btn-primary rounded-0 py-3 px-5 font-weight-semibold">
                         </div>
                     </div>
                 </form>
