@@ -31,88 +31,43 @@
                 <p>
                     لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
                 </p>
-                <form class="contact-form custom-form-style-1"
-                      action="php/contact-form.php"
-                      method="POST">
-                    <div class="contact-form-success alert alert-success d-none mt-4">
-                        <strong>موفقیت!</strong> پیام شما به ما ارسال شد.
-                    </div>
-                    <div class="contact-form-error alert alert-danger d-none mt-4">
-                        <strong>خطا!</strong> خطایی در ارسال پیام شما پیش آمد.
-                        <span class="mail-error-message text-1 d-block"></span>
-                    </div>
+                <form class="contact-form custom-form-style-1" method="POST">
+                    {% csrf_token %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success mt-4">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger mt-4">{% for error in form.non_field_errors %}{{ error }}{% endfor %}</div>
+                    {% endif %}
                     <div class="form-row">
                         <div class="form-group col">
-                            <input type="text"
-                                   placeholder="نام شما"
-                                   value=""
-                                   data-msg-required="لطفا نام خود را وارد کنید."
-                                   maxlength="100"
-                                   class="form-control bg-color-tertiary"
-                                   name="name"
-                                   id="name"
-                                   required>
+                            {{ form.name }}
+                            {% for error in form.name.errors %}<span class="text-danger text-1 d-block mt-1">{{ error }}</span>{% endfor %}
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <input type="email"
-                                   placeholder="آدرس ایمیل"
-                                   value=""
-                                   data-msg-required="لطفا آدرس ایمیل خود را وارد کنید."
-                                   data-msg-email="لطفا یک آدرس ایمیل معتبر وارد کنید."
-                                   maxlength="100"
-                                   class="form-control bg-color-tertiary text-left"
-                                   name="email"
-                                   id="email"
-                                   dir="ltr"
-                                   required>
+                            {{ form.phone }}
+                            {% for error in form.phone.errors %}
+                                <span class="text-danger text-1 d-block mt-1">{{ error }}</span>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <input type="text"
-                                   placeholder="شماره تلفن"
-                                   value=""
-                                   data-msg-required="لطفا شماره تلفن خود را وارد کنید."
-                                   maxlength="100"
-                                   class="form-control bg-color-tertiary"
-                                   name="phone"
-                                   id="phone"
-                                   required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <input type="text"
-                                   placeholder="موضوع"
-                                   value=""
-                                   data-msg-required="لطفا موضوع را وارد کنید."
-                                   maxlength="100"
-                                   class="form-control bg-color-tertiary"
-                                   name="subject"
-                                   id="subject"
-                                   required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <textarea maxlength="5000"
-                                      placeholder="پیام"
-                                      data-msg-required="لطفا پیام خود را وارد کنید."
-                                      rows="5"
-                                      class="form-control bg-color-tertiary"
-                                      name="message"
-                                      id="message"
-                                      required></textarea>
+                            {{ form.message }}
+                            {% for error in form.message.errors %}
+                                <span class="text-danger text-1 d-block mt-1">{{ error }}</span>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
                             <input type="submit"
                                    value="ارسال پیام"
-                                   class="btn btn-outline btn-primary rounded-0 py-3 px-5 font-weight-semibold"
-                                   data-loading-text="در حال بارگذاری ...">
+                                   class="btn btn-outline btn-primary rounded-0 py-3 px-5 font-weight-semibold">
                         </div>
                     </div>
                 </form>
