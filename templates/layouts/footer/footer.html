@@ -5,7 +5,7 @@
         <div class="row justify-content-md-center py-5">
             <div class="col-md-12 col-lg-2 d-flex align-items-center justify-content-center justify-content-lg-start mb-5 mb-lg-0 mt-4 mt-md-0">
                 <a href="#">
-                    <img src="{{ site_config.logo.url }}"
+                    <img src="{% if site_config.logo %}{{ site_config.logo.url }}{% else %}{% static 'img/demos/construction-2/logo-1.png' %}{% endif %}"
                          alt="{{ site_config.company_name }} Logo"
                          class="img-fluid logo">
                 </a>

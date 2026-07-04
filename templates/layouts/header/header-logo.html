@@ -1,3 +1,4 @@
+{% load static %}
 <div class="header-column bg-color-primary flex-grow-0 px-3 px-lg-5">
     <div class="header-row">
         <div class="header-logo">
@@ -6,7 +7,7 @@
                      class="img-logo"
                      width="100%"
                      height="auto"
-                     src="{{ site_config.logo.url }}">
+                     src="{% if site_config.logo %}{{ site_config.logo.url }}{% else %}{% static 'img/demos/construction-2/logo-1.png' %}{% endif %}">
             </a>
         </div>
     </div>

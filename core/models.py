@@ -1,5 +1,6 @@
 from django.core.validators import MaxLengthValidator
 from django.db import models
+from django.db.utils import OperationalError, ProgrammingError
 from django.utils.translation import gettext_lazy as _
 from solo.models import SingletonModel
 
@@ -72,7 +73,13 @@ class SiteConfig(SingletonModel):
 
     @classmethod
     def load(cls):
-        return cls.objects.first()
+        try:
+            return cls.get_solo()
+        except (OperationalError, ProgrammingError):
+            # Table not migrated yet (e.g. first run before `migrate` has
+            # been applied). Fall back to an unsaved default instance so
+            # pages that render site_config don't hard-crash.
+            return cls()
 
     def __str__(self):
         return self.company_name
