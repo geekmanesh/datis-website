@@ -1,6 +1,6 @@
 [project]
 name = "datis"
-version = "1.0.0"
+version = "1.0.1"
 description = "Django website for small companies to showcase their services and projects"
 readme = "README.md"
 requires-python = ">=3.14"
