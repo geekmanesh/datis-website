@@ -1,81 +1,131 @@
-# Datis Website
+# Datis
 
-A Django-based website for a small company to showcase its portfolio, projects, and services to clients. The user-facing interface is in Persian, while the admin panel supports both Farsi and English.
+Datis is the website for a small company, built to present its services, past
+projects, and general information to clients. The public site is in Persian;
+the admin panel supports both Persian and English.
 
-## Table of Contents
+## Features
 
-- [About the Project](#about-the-project)
-  - [Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup and Install](#setup-and-install)
-  - [Usage](#usage)
-- [Show Your Support](#show-your-support)
-- [License](#license)
+- Homepage with hero section, services overview, and recent projects
+- Services listing and detail pages
+- Projects listing and detail pages, grouped by category, with image galleries
+- About page
+- Contact page with a message form (rate-limited per IP)
+- Admin panel built on django-unfold, with a language switcher
+- Site-wide settings (company name, contact info, social links, hero text)
+  managed as a single record in the admin panel
 
-## About the Project <a id="about-the-project"></a>
+## Tech stack
 
-This repository contains a Django project for a mini company that needs an online presence. The website allows the company to present its portfolio, list services, and share project details with potential clients. The admin panel is bilingual (Persian/English) for easy management, while the public website is entirely in Persian.
+- Python 3.14
+- Django 6
+- PostgreSQL 17
+- django-unfold for the admin interface
+- django-solo for the single-record site settings
+- uv for dependency management
+- Docker / Docker Compose for local development and deployment
+- ruff and djlint for linting and formatting
 
-### Built With <a id="built-with"></a>
+## Project layout
 
-#### Tech Stack <a id="tech-stack"></a>
+- `datis/` - project settings, URLs, WSGI/ASGI entrypoints
+- `core/` - site settings, homepage, about and contact pages
+- `services/` - service listing and detail pages
+- `projects/` - project listing, detail pages, and categories
+- `users/` - custom user model (email-based authentication)
+- `templates/` - HTML templates, organized by page and shared components
+- `static/`, `media/` - static assets and uploaded files
+- `locale/` - translation files
 
-- **Language**: Python
-- **Framework**: Django
-- **Database**: PostgreSQL
-- **Containerization**: Docker
+## Getting started
 
-#### Key Features <a id="key-features"></a>
+### Requirements
 
-- Company portfolio and project showcase
-- Service listing pages
-- Bilingual admin panel (Farsi and English)
-- User‑facing interface in Persian
-- Django’s built‑in admin interface for content management
+- Docker and Docker Compose
+- `make` (optional, but recommended - see below)
 
-## Getting Started <a id="getting-started"></a>
+### Setup
 
-Follow these steps to run the project locally.
-
-### Prerequisites <a id="prerequisites"></a>
-
-```sh
-git
-docker
-docker-compose
-```
-
-### Setup and Install <a id="setup-and-install"></a>
-
-Clone the repository and start the application using Docker Compose.
+Clone the repository and create your local environment file:
 
 ```sh
-# Clone the repository
-git clone https://github.com/geekmanesh/datis-website.git
+git clone git@github.com:geekmanesh/datis-website.git
 cd datis-website
-
-# Build and run the containers
-docker-compose up --build
+cp .env-example .env
 ```
 
-The first run will build the Django image, set up the PostgreSQL database, and apply migrations automatically.
+Update `.env` with your own values (`SECRET_KEY`, database name, user, and
+password).
 
-### Usage <a id="usage"></a>
+Build the images and start the stack:
 
-Once the containers are running, open your browser and go to:
+```sh
+docker compose up --build
+```
 
-- **Website**: [http://localhost:8000](http://localhost:8000) – the public Persian site.
-- **Admin Panel**: [http://localhost:8000/admin](http://localhost:8000/admin) – log in with the superuser credentials you created.
+This starts two containers: `web` (the Django app, served on port 8000) and
+`db` (PostgreSQL 17). Once the containers are up, apply migrations and create
+an admin account:
 
-The admin interface can be switched between Farsi and English via Django’s language selector.
+```sh
+docker compose exec web python manage.py migrate
+docker compose exec web python manage.py createsuperuser
+```
 
-## Show Your Support <a id="show-your-support"></a>
+### Using the Makefile
 
-If you find this project interesting, please give it a star on GitHub.
+A `Makefile` is included to wrap the commands above. Run `make help` to list
+everything available, grouped by category (Docker lifecycle, Django
+management, testing and code quality, cleanup). A few examples:
 
-## License <a id="license"></a>
+```sh
+make bootstrap    # create .env, build images, start the stack, run migrations
+make up            # start the stack in the background
+make migrate       # apply database migrations
+make superuser     # create an admin account
+make logs          # tail logs for all services
+make down          # stop the stack
+```
 
-This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
+### Usage
+
+- Website: http://localhost:8000
+- Admin panel: http://localhost:8000/admin
+
+## Running tests and checks locally
+
+Install dependencies with `uv`:
+
+```sh
+uv sync --dev
+```
+
+Then run:
+
+```sh
+uv run python manage.py test
+uv run ruff check .
+uv run ruff format . --check
+uv run djlint templates --check
+```
+
+These are the same checks run in CI on every push and pull request.
+
+## Internationalization
+
+The site supports Persian (default, public-facing) and English (admin panel).
+Translation files live under `locale/`. After changing translatable strings,
+regenerate and compile them with:
+
+```sh
+python manage.py makemessages -a
+python manage.py compilemessages
+```
+
+## Contributing
+
+See `docs/CODE_OF_CONDUCT.md` before opening an issue or pull request.
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
