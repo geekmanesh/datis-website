@@ -75,7 +75,7 @@ class SiteConfig(SingletonModel):
     def load(cls):
         try:
             return cls.get_solo()
-        except (OperationalError, ProgrammingError):
+        except OperationalError, ProgrammingError:
             # Table not migrated yet (e.g. first run before `migrate` has
             # been applied). Fall back to an unsaved default instance so
             # pages that render site_config don't hard-crash.
